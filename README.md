@@ -12,4 +12,4 @@ c3 is a D3-based reusable chart library that enables deeper integration of chart
 
 ### HighchartJs
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Highcharts JS is a JavaScript charting library based on SVG, with fallbacks to VML and canvas for old browsers [highcharts.com](www.highcharts.com).
