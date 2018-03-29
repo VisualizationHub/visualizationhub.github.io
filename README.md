@@ -8,7 +8,7 @@ Simple HTML5 Charts using the canvas element [chartjs.org](http://www.chartjs.or
 
 ### C3Js
 
-c3 is a D3-based reusable chart library that enables deeper integration of charts into web applications [c3js.org](http://c3js.org/). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+c3 is a D3-based reusable chart library that enables deeper integration of charts into web applications [c3js.org](http://c3js.org/).
 
 ### HighchartJs
 
