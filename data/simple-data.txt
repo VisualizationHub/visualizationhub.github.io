@@ -1,0 +1,6 @@
+api for sample data
+
+http://api.population.io/#!/population/retrievePopulationTableAllAges
+
+http://api.population.io:80/1.0/population/1980/Brazil/
+http://api.population.io/1.0/population/2010/India/
