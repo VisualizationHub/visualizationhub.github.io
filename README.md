@@ -1,7 +1,7 @@
 ## Welcome to Visualization Hub
 
 Hub to visualize data & web contents using Javascript.
-[Visualize Charts on Charts Hub](https://visualizationhub.github.io/Charts/).
+[Visualize Charts on Charts Hub](https://visualizationhub.github.io/).
 
 ### ChartJs
 
