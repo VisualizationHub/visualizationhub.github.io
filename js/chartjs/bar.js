@@ -29,7 +29,7 @@ var options = {
         }
     }],
     xAxes:[{
-        stacked: true,
+        stacked: false,
     		gridLines: {
         	display:false
         }
