@@ -32,6 +32,8 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.5.1/c3.min.css">
     <link red="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.7/css/highcharts.css">
     <link rel="stylesheet" href="css/main.css">
@@ -39,85 +41,183 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light box-shadow">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand" href="#">
-                    <strong>Charts Hub</strong>
-                </a>
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-					<li class="nav-item active">
-                        <a class="nav-link" href="#">Pie Chart
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-					<li class="nav-item active">
-                        <a class="nav-link" href="#">Stack Charts
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
+    <div class="wrapper">
+        <header class="topnavbar-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light box-shadow">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <a class="navbar-brand" href="#">
+                        <strong>Charts Hub</strong>
+                    </a>
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Pie Chart
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Stack Charts
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
 
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
-    </header>
-    <br />
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </header>
 
+        <main role="main" class="content-wrapper">
+            <div class="row">
+                <div class="col-4">
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <a class="float-right" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                <i class="fas fa-arrows-alt"></i>
+                            </a>
+                            <a class="float-right" href="#" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                <em class="fa fa-eye"></em>
+                            </a>
 
-    <main role="main" class="container">
-        <div class="row">
-            <div class="col-4">
-                <div class="card ">
-                    <div class="card-header">
-                        <strong>Bar Chart (Chart.JS)</strong>
+                            <div class="card-title">Bar Chart (Chart.JS)</div>
+                        </div>
+                        <div class="card-body text-center">
+                            <canvas id="chart-bar-container" height="169px"></canvas>
+                        </div>
                     </div>
-                    <div class="card-body text-center">
-                        <canvas id="chart-bar-container" height="390" ></canvas>
+                </div>
+                <div class="col-4">
+                    <div class="card card-default ">
+                        <div class="card-header">
+                            <a class="float-right" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                <i class="fas fa-arrows-alt"></i>
+                            </a>
+                            <a class="float-right" href="#" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                <em class="fa fa-eye"></em>
+                            </a>
+
+                            <div class="card-title">Bar Chart (C3.JS)</div>
+                        </div>
+                        <div class="card-body text-center" >
+                            <div id="c3-bar-container" style="height: 260px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card card-default ">
+                        <div class="card-header">
+                            <a class="float-right" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                <i class="fas fa-arrows-alt"></i>
+                            </a>
+                            <a class="float-right" href="#" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                <em class="fa fa-eye"></em>
+                            </a>
+
+                            <div class="card-title">Bar Chart (Highchart.JS)</div>
+                        </div>
+                        <div class="card-body text-center" >
+                            <div id="hc-bar-container" style="height: 260px;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="card ">
-                    <div class="card-header">
-                        <strong>Bar Chart (C3.JS)</strong>
+            <div class="row">
+                    <div class="col-4">
+                            <div class="card card-default ">
+                                <div class="card-header">
+                                    <a class="float-right" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                        <i class="fas fa-arrows-alt"></i>
+                                    </a>
+                                    <a class="float-right" href="#" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                        <em class="fa fa-eye"></em>
+                                    </a>
+        
+                                    <div class="card-title">Pie Chart (Highchart.JS)</div>
+                                </div>
+                                <div class="card-body text-center" >
+                                    <div id="hc-pie-container" style="height: 260px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-8">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" href="#" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+    
+                                <div class="card-title">Line Chart (C3.JS)</div>
+                            </div>
+                            <div class="card-body text-center" >
+                                <div id="c3-line-container" style="height: 260px;"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body text-center">
-                        <div id="c3-bar-container"   style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
-                    </div>
+                 
                 </div>
+                <!-- <div class="row">
+                        <div class="col-8">
+                            <div class="card card-default">
+                                <div class="card-header">
+                                    <a class="float-right" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                        <i class="fas fa-arrows-alt"></i>
+                                    </a>
+                                    <a class="float-right" href="#" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                        <em class="fa fa-eye"></em>
+                                    </a>
+        
+                                    <div class="card-title">Area Chart (Chart.JS)</div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <canvas id="chart-area-container" height="169px !important"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                                <div class="card card-default">
+                                    <div class="card-header">
+                                        <a class="float-right" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                            <i class="fas fa-arrows-alt"></i>
+                                        </a>
+                                        <a class="float-right" href="#" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                            <em class="fa fa-eye"></em>
+                                        </a>
+            
+                                        <div class="card-title">Doughnut (Chart.JS)</div>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <canvas id="chart-doughnut-container" height="169px"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                       
+                    </div> -->
+                 
+        </main>
+
+        <footer class="footer">
+            <div class="container text-center">
+                <span class="text-muted">Charts Hub @2018</span>
             </div>
-            <div class="col-4">
-                <div class="card ">
-                    <div class="card-header">
-                        <strong>Bar Chart (HighCharts)</strong>
-                    </div>
-                    <div class="card-body text-center">
-                        <div id="hc-bar-container"   style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <br />
-    <footer class="footer">
-        <div class="container text-center">
-            <span class="text-muted">Charts Hub @2018</span>
-        </div>
-    </footer>
-    <br />
+        </footer>
+
+
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -139,16 +239,23 @@
     <!--custom js-->
     <script src="data/getData.js"></script>
     <script src="js/highcharts/bar.js"></script>
+    <script src="js/highcharts/pie.js"></script>
     <script src="js/c3js/bar.js"></script>
+    <script src="js/c3js/line.js"></script>
     <script src="js/chartjs/bar.js"></script>
-	<!-- Google Analytics -->
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-91024451-2', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-<!-- End Google Analytics -->
+    <script src="js/chartjs/doughnut.js"></script>
+    <script src="js/chartjs/area.js"></script>
+    <!-- Google Analytics -->
+    <script>
+        window.ga = window.ga || function () {
+            (ga.q = ga.q || []).push(arguments)
+        };
+        ga.l = +new Date;
+        ga('create', 'UA-91024451-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
 </body>
 
 </html>

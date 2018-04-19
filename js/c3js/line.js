@@ -3,7 +3,7 @@ var commonData=[{"name":"Year 1800","data":[107,31,635,203],"country":"Africa"}
 ,{"name":"Year 2000","data":[814,841,3714,727],"country":"Asia"}
 ,{"name":"Year 2016","data":[1216,1001,4436,738],"country":"Europe"}];
 var chart = c3.generate({
-    bindto: '#c3-bar-container',
+    bindto: '#c3-line-container',
     data: {
         x:'x',
         columns: [
@@ -18,7 +18,7 @@ var chart = c3.generate({
         //x:'country',
         //json:commonData,
         //json:_.pluck(commonData,"data") ,
-        type: 'bar',
+       // type: 'bar',
         labels: true
         // keys: {
         // //    tick:{ value: _.pluck(commonData,"country")}
