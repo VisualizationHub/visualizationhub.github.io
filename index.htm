@@ -3,6 +3,7 @@
 
 <head>
 
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,8 +31,10 @@
 
     <link rel="icon" href="favicon.ico">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.5.1/c3.min.css">
     <link red="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.7/css/highcharts.css">
     <link rel="stylesheet" href="css/main.css">
@@ -39,10 +42,12 @@
 </head>
 
 <body>
+
     <div class="wrapper">
         <header class="topnavbar-wrapper">
             <nav class="navbar navbar-expand-lg navbar-light bg-light box-shadow">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
@@ -76,8 +81,9 @@
         </header>
 
         <main role="main" class="content-wrapper">
+
             <div class="row">
-                <div class="col-4">
+                <div class="col">
                     <div class="card card-default">
                         <div class="card-header">
                             <a class="float-right togglechart" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
@@ -94,7 +100,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col">
                     <div class="card card-default ">
                         <div class="card-header">
                             <a class="float-right togglechart" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
@@ -111,7 +117,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col">
                     <div class="card card-default ">
                         <div class="card-header">
                             <a class="float-right togglechart" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
@@ -130,7 +136,97 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-4">
+                <div class="col">
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <a class="float-right togglechart" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                <i class="fas fa-arrows-alt"></i>
+                            </a>
+                            <a class="float-right" href="#" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                <em class="fa fa-eye"></em>
+                            </a>
+
+                            <div class="card-title">Donut Chart (C3.JS)</div>
+                        </div>
+                        <div class="card-body text-center">
+                            <div id="c3-donut-container" style="height: 260px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <a class="float-right togglechart" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                <i class="fas fa-arrows-alt"></i>
+                            </a>
+                            <a class="float-right" href="#" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                <em class="fa fa-eye"></em>
+                            </a>
+
+                            <div class="card-title">Pie Chart (C3.JS)</div>
+                        </div>
+                        <div class="card-body text-center">
+                            <div id="c3-pie-container" style="height: 260px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <a class="float-right togglechart" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                <i class="fas fa-arrows-alt"></i>
+                            </a>
+                            <a class="float-right" href="#" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                <em class="fa fa-eye"></em>
+                            </a>
+
+                            <div class="card-title">Stacked Area Chart (Highchart.JS)</div>
+                        </div>
+                        <div class="card-body text-center">
+                            <div id="hc-area-container" style="height: 260px;"></div>
+                        </div>
+                    </div>
+                </div>              
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <a class="float-right" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                <i class="fas fa-arrows-alt"></i>
+                            </a>
+                            <a class="float-right" href="#" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                <em class="fa fa-eye"></em>
+                            </a>
+
+                            <div class="card-title">Column Chart (Highchart.JS)</div>
+                        </div>
+                        <div class="card-body text-center">
+                            <div id="hc-column-container" style="height: 260px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <a class="float-right" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                <i class="fas fa-arrows-alt"></i>
+                            </a>
+                            <a class="float-right" href="#" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                <em class="fa fa-eye"></em>
+                            </a>
+
+                            <div class="card-title">Doughnut (Chart.JS)</div>
+                        </div>
+                        <div class="card-body text-center">
+                            <canvas id="chart-doughnut-container" height="169px"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col">
                     <div class="card card-default ">
                         <div class="card-header">
                             <a class="float-right togglechart" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
@@ -147,7 +243,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-8">
+                <div class="col-lg-8">
                     <div class="card card-default ">
                         <div class="card-header">
                             <a class="float-right togglechart" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
@@ -166,43 +262,7 @@
                 </div>
 
             </div>
-            <!-- <div class="row">
-                        <div class="col-8">
-                            <div class="card card-default">
-                                <div class="card-header">
-                                    <a class="float-right" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                        <i class="fas fa-arrows-alt"></i>
-                                    </a>
-                                    <a class="float-right" href="#" title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                        <em class="fa fa-eye"></em>
-                                    </a>
-        
-                                    <div class="card-title">Area Chart (Chart.JS)</div>
-                                </div>
-                                <div class="card-body text-center">
-                                    <canvas id="chart-area-container" height="169px !important"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                                <div class="card card-default">
-                                    <div class="card-header">
-                                        <a class="float-right" href="#" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                            <i class="fas fa-arrows-alt"></i>
-                                        </a>
-                                        <a class="float-right" href="#" title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                            <em class="fa fa-eye"></em>
-                                        </a>
-            
-                                        <div class="card-title">Doughnut (Chart.JS)</div>
-                                    </div>
-                                    <div class="card-body text-center">
-                                        <canvas id="chart-doughnut-container" height="169px"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                       
-                    </div> -->
+
 
         </main>
 
@@ -215,9 +275,27 @@
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <div class="popup" data-popup="datasetComparsionPopup" id="datasetComparsionPopup">
+        <div class="popup-inner">
+            <div class="modal-body popup-body" style="min-height:465px;">
+                <div class="datasetComparsionPopup-header">Data Comparison View (
+                    <span class="chartTypeLabel"> </span> )</div>
+                <div class="datasetComparsionPopupContent" id="datasetComparsionPopupContent">
+
+                </div>
+            </div>
+
+            <div class="popup-close js-closeDatasetComparsionPopup" data-popup-close="datasetComparsionPopup" href="#" style="cursor:pointer;">x</div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
     <!--Chart.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
@@ -232,129 +310,41 @@
 
     <!--custom js-->
     <script src="data/getData.js"></script>
+    <!--highchart.js-->
     <script src="js/highcharts/bar.js"></script>
     <script src="js/highcharts/pie.js"></script>
+    <script src="js/highcharts/column.js"></script>
+    <script src="js/highcharts/area.js"></script>
+    <!--C3.js-->
     <script src="js/c3js/bar.js"></script>
     <script src="js/c3js/line.js"></script>
+    <script src="js/c3js/donut.js"></script>
+    <script src="js/c3js/pie.js"></script>
+    <script src="js/c3js/guage.js"></script>
+    <!--Chart.js-->
     <script src="js/chartjs/bar.js"></script>
     <script src="js/chartjs/doughnut.js"></script>
     <script src="js/chartjs/area.js"></script>
-    <script>
-        function zoomInCharts(options) {
-            console.log("zoomInCharts called ...");
-            //TO DO options should contain lot more info to make dyanmic for each charts based on parameter
-            var commonData = [{
-                "name": "Year 1800",
-                "data": [107, 31, 635, 203],
-                "country": "Africa"
-            }, {
-                "name": "Year 1900",
-                "data": [133, 156, 947, 408],
-                "country": "America"
-            }, {
-                "name": "Year 2000",
-                "data": [814, 841, 3714, 727],
-                "country": "Asia"
-            }, {
-                "name": "Year 2016",
-                "data": [1216, 1001, 4436, 738],
-                "country": "Europe"
-            }];
-            var chart = c3.generate({
-                bindto: '#datasetComparsionPopupContent',
-                data: {
-                    x: 'x',
-                    columns: [
-                        ['x', "Africa", "America", "Asia", "Europe"],
-                        ['Year 1800', 107, 31, 635, 203],
-                        ['Year 1900', 133, 156, 947, 408],
-                        ['Year 2000', 814, 841, 3714, 727],
-                        ['Year 2010', 1216, 1001, 4436, 738]
-                    ],
-                    //x:'country',
-                    //json:commonData,
-                    //json:_.pluck(commonData,"data") ,
-                    type: 'bar',
-                    labels: true
-                        // keys: {
-                        // //    tick:{ value: _.pluck(commonData,"country")}
 
-                    // }
-                },
-                axis: {
-                    x: {
-                        type: 'category' // this needed to load string x value
-                    }
-                },
-                bar: {
-                    width: {
-                        ratio: 0.5 // this makes bar width 50% of length between ticks
-                    }
-                    // or
-                    //width: 100 // this makes bar width 100px
-                },
-                grid: {
-                    x: {
-                        show: true
-                    },
-                    y: {
-                        show: true
-                    }
-                }
-            });
-        }
-        $(function() {
-            console.log("DOM is ready");
-            $(".togglechart").click(function() {
-                console.log("togglechart BUTTON CLICKED.");
+    <!--vuejs-->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
-
-                // Do Some calculation or some stuff for zomm in chart
-                // Clear old contents from popup
-                $('#datasetComparsionPopupContent').empty();
-                // Update requested charts in Zoom mode
-                // For Temporary purpose used setTimout function as popup opened after zoomInCharts function
-                setTimeout(function() {
-                    zoomInCharts();
-                }, 0);
-
-                //show thw popup
-
-                $('#datasetComparsionPopup').show();
-            });
-            $(".js-closeDatasetComparsionPopup").click(function() {
-                console.log("**closeDatasetComparsionPopup POPUP closed");
-                // Hide pop up of zoom charts
-                $('#datasetComparsionPopup').hide();
-            });
-
-
-
-        })
-    </script>
+    <script src="js/common.js"></script>
     <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91024451-2"></script>
     <script>
-        window.ga = window.ga || function() {
+        window.ga = window.ga || function () {
             (ga.q = ga.q || []).push(arguments)
         };
-        ga.l = +new Date;
+        ga.l = +new Date();
         ga('create', 'UA-91024451-2', 'auto');
         ga('send', 'pageview');
     </script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
     <!-- End Google Analytics -->
-    <div class="popup" data-popup="datasetComparsionPopup" id="datasetComparsionPopup">
-        <div class="popup-inner">
-            <div class="modal-body popup-body" style="min-height:465px;">
-                <div class="datasetComparsionPopup-header">Data Comparison View ( <span class="chartTypeLabel"> </span> )</div>
-                <div class="datasetComparsionPopupContent" id="datasetComparsionPopupContent">
 
-                </div>
-            </div>
 
-            <div class="popup-close js-closeDatasetComparsionPopup" data-popup-close="datasetComparsionPopup" href="#" style="cursor:pointer;">x</div>
-        </div>
-    </div>
+
 
 </body>
 
