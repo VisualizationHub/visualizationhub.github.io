@@ -1,5 +1,4 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic);
-
 html {
     direction: ltr;
     -ms-touch-action: manipulation;
@@ -6717,4 +6716,87 @@ body .jvectormap-zoomout {
 .flatdoc-wrapper .button:not(:disabled):not(.disabled):active:focus,
 .show>.flatdoc-wrapper .button.dropdown-toggle:focus {
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)
+}
+
+
+/*Style for popup*/
+
+#datasetComparsionPopup {
+    text-align: center;
+}
+
+#datasetComparsionPopup .popup-body {
+    overflow-y: visible;
+}
+
+#datasetComparsionPopup .popup-inner {
+    width: 90%;
+    height: 620px;
+    top: 50%;
+    overflow-y: auto;
+}
+
+.datasetComparsionPopup-header {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#datasetComparsionPopup .chartTypeLabel,
+#datasetComparsionPopup .chartInnerTypeLabel {
+    color: #fb7536;
+}
+
+
+/*popup*/
+
+
+/* Outer */
+
+.popup {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 1000000;
+}
+
+
+/* Inner */
+
+.popup-inner {
+    max-width: 100%;
+    width: 75%;
+    height: 580px;
+    position: absolute;
+    top: 54%;
+    left: 49%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 1);
+    border-radius: 3px;
+    background: #fff;
+}
+
+
+/* Close Button */
+
+.popup-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    /* transition:ease 0.25s all;*/
+    -webkit-transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
+    border-radius: 1000px;
+    font-family: Arial, Sans-Serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100%;
+    color: #054190;
+    text-shadow: 0px 0px 1px white;
 }
