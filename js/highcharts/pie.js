@@ -1,6 +1,5 @@
-
-
-Highcharts.chart('hc-pie-container', {
+var getPieHighchart = function (element) {
+Highcharts.chart(element.Id, {
     chart: {
         plotBackgroundColor: null,
         plotBorderWidth: null,
@@ -64,3 +63,5 @@ Highcharts.chart('hc-pie-container', {
         }]
     }]
 });
+
+};

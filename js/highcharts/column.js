@@ -1,5 +1,5 @@
-
-Highcharts.chart('hc-column-container', {
+var getColumnHighchart = function (element) {
+Highcharts.chart(element.Id, {
     chart: {
         type: 'column'
     },
@@ -76,3 +76,5 @@ Highcharts.chart('hc-column-container', {
         yAxis: 1
     }]
 });
+
+};

@@ -1,8 +1,11 @@
+var getBarHighchart = function(element){
+
+
 var commonData=[{"name":"Year 1800","data":[107,31,635,203],"country":"Africa"}
 ,{"name":"Year 1900","data":[133,156,947,408],"country":"America"}
 ,{"name":"Year 2000","data":[814,841,3714,727],"country":"Asia"}
 ,{"name":"Year 2016","data":[1216,1001,4436,738],"country":"Europe"}];
-Highcharts.chart('hc-bar-container', {
+Highcharts.chart(element.Id, {
     chart: {
         type: 'column'
     },
@@ -56,3 +59,4 @@ Highcharts.chart('hc-bar-container', {
     },
     series: commonData
 });
+}

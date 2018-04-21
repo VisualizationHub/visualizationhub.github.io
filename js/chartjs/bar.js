@@ -1,3 +1,4 @@
+var getBarChartJs = function (element) {
 var data = {
     labels: ["Africa", "America", "Asia", "Europe"],
     datasets: [
@@ -38,11 +39,13 @@ var options = {
 };
 
 
-var ctx = document.getElementById("chart-bar-container");
+var ctx = document.getElementById(element.Id);
 
 
-var myBarChart = new Chart(ctx, {
+new Chart(ctx, {
     type: 'bar',
     data: data,
     options: options
 });
+
+};

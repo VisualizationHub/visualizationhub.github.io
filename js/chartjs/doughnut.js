@@ -1,3 +1,5 @@
+var getDoughNutChartJs = function (element) {
+
 var data = {
     labels: ["Africa", "America", "Asia", "Europe"],
     datasets: [
@@ -26,11 +28,13 @@ var options = {
 };
 
 
-var ctxDoughnut = document.getElementById("chart-doughnut-container");
+var ctxDoughnut = document.getElementById(element.Id);
 
 // And for a doughnut chart
-var myDoughnutChart = new Chart(ctxDoughnut, {
+ new Chart(ctxDoughnut, {
     type: 'doughnut',
     data: data,
     options: options
 });
+
+};

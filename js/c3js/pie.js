@@ -1,6 +1,8 @@
+var getPieC3Js = function (element) {
+
 
 var piechart = c3.generate({
-    bindto: '#c3-pie-container',
+    bindto: '#' + element.Id,
     data: {
         // iris data from R
         columns: [
@@ -22,7 +24,7 @@ setTimeout(function () {
             ["virginica", 2.5, 1.9, 2.1, 1.8, 2.2, 2.1, 1.7, 1.8, 1.8, 2.5, 2.0, 1.9, 2.1, 2.0, 2.4, 2.3, 1.8, 2.2, 2.3, 1.5, 2.3, 2.0, 2.0, 1.8, 2.1, 1.8, 1.8, 1.8, 2.1, 1.6, 1.9, 2.0, 2.2, 1.5, 1.4, 2.3, 2.4, 1.8, 1.8, 2.1, 2.4, 2.3, 1.9, 2.3, 2.5, 2.3, 1.9, 2.0, 2.3, 1.8],
         ]
     });
-}, 1500);
+}, 100);
 
 setTimeout(function () {
     piechart.unload({
@@ -31,5 +33,6 @@ setTimeout(function () {
     piechart.unload({
         ids: 'data2'
     });
-}, 2500);
+}, 300);
 
+};
