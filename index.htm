@@ -85,7 +85,7 @@
                 <div class="col col-lg-4">
                     <div class="card card-default">
                         <div class="card-header">
-                                <a class="float-right rotate-chart" title="Roate Chart" data-rotate="false" data-lib="chartjs" data-tool="Rotate charts" data-toggle="tooltip">
+                                <a class="float-right rotate-chart" title="Roate Chart" data-rotate="false" data-target-id="chart-bar-container" data-lib="chartjs" data-tool="Rotate charts" data-toggle="tooltip">
                                 <i class="fas fa-redo"></i>
                                     </a>
                             <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
@@ -105,7 +105,7 @@
                 <div class="col col-lg-4">
                     <div class="card card-default ">
                         <div class="card-header">
-                                <a class="float-right rotate-chart" title="Roate Chart" data-lib="c3js"  data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
+                                <a class="float-right rotate-chart" title="Roate Chart" data-chart-type="bar" data-lib="c3js"  data-target-id="c3-bar-container" data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
                                         <i class="fas fa-redo"></i>
                                             </a>
                             <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
@@ -250,7 +250,11 @@
                 </div>
                 <div class="col col-lg-8">
                     <div class="card card-default ">
-                        <div class="card-header">
+                        <div class="card-header">                               
+                             <a class="float-right rotate-chart" title="Roate Chart" data-lib="c3js" data-chart-type="line" data-target-id="c3-line-container" data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
+                                <i class="fas fa-redo"></i>
+                                    </a>
+
                             <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
                                 <i class="fas fa-arrows-alt"></i>
                             </a>

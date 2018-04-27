@@ -175,11 +175,26 @@ $(function () {
             var isRotate = $(this).attr("data-rotate") === "false" ? true : false;
             console.log(this);
             $(this).attr("data-rotate", isRotate);
+            switch ($(this).attr("data-chart-type")) {
+                case "bar":
 
-            getBarC3Js({
-                Id: "c3-bar-container",
-                isRotate: isRotate
-            });
+                    getBarC3Js({
+                        Id: "c3-" + $(this).attr("data-chart-type") + "-container",//$(this).attr("data-target-id"),
+                        isRotate: isRotate
+                    });
+
+                    break;
+                case "line":
+
+                    getLineC3Js({
+                        Id: "c3-" + $(this).attr("data-chart-type") + "-container",//$(this).attr("data-target-id"),
+                        isRotate: isRotate
+                    });
+
+                    break;
+                default:
+                    break;
+            }
         }
     });
 

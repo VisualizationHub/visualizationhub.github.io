@@ -26,6 +26,7 @@ var getLineC3Js = function (element) {
         // }
     },
     axis: {
+        rotated:element.isRotate,
         x: {
             type: 'category' // this needed to load string x value
         }
