@@ -71,7 +71,7 @@ function zoomInCharts(options) {
             });
             break;
 
-            //c3.js
+        //c3.js
         case 'Bar Chart (C3.JS)':
             getBarC3Js({
                 Id: options.Id
@@ -95,7 +95,7 @@ function zoomInCharts(options) {
 
 
 
-            //chart.js
+        //chart.js
 
         case 'Bar Chart (Chart.JS)':
             // Temporary fix to append canvas in html for the chartjs
@@ -165,5 +165,23 @@ $(function () {
     $(".togglechart").click(function () {
         togglechart(this);
     });
+
+    $(".rotate-chart").click(function () {
+        if ($(this).attr("data-lib") === "c3js") {
+
+
+            //alert ("Chart Rotated.");
+            //Below code for rotate charts only works for c3 bar charts
+            var isRotate = $(this).attr("data-rotate") === "false" ? true : false;
+            console.log(this);
+            $(this).attr("data-rotate", isRotate);
+
+            getBarC3Js({
+                Id: "c3-bar-container",
+                isRotate: isRotate
+            });
+        }
+    });
+
 
 });

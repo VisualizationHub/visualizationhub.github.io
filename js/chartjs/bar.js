@@ -43,7 +43,7 @@ var ctx = document.getElementById(element.Id);
 
 
 new Chart(ctx, {
-    type: 'bar',
+    type: 'bar',//'horizontalBar', for rotate charts
     data: data,
     options: options
 });

@@ -6800,3 +6800,6 @@ body .jvectormap-zoomout {
     color: #054190;
     text-shadow: 0px 0px 1px white;
 }
+.togglechart,.rotate-chart{
+    cursor: pointer;
+}
