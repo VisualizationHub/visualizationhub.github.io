@@ -37,9 +37,9 @@ var initCharts = function () {
     getBarChartJs({
         Id: 'chart-bar-container'
     });
-    getDoughNutChartJs({
-        Id: 'chart-doughnut-container'
-    });
+    // getDoughNutChartJs({
+    //     Id: 'chart-doughnut-container'
+    // });
 
 };
 
