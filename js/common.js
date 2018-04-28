@@ -178,20 +178,23 @@ $(function () {
         }
     });
 
-    $(".rotate-chart").click(function () {
-        if ($(this).attr("data-lib") === "c3js") {
+    $(".rotate-chart").click(function (e) {
+        //Store current element in local as cache value to reduce extra traversing for same element using jquery
+        var $currentElement = $(this);
+        var chartLib = $currentElement.attr("data-lib");
+        var chartType = $currentElement.attr("data-chart-type");
+        if (chartLib === "c3js") {
 
-
-            //alert ("Chart Rotated.");
             //Below code for rotate charts only works for c3 bar charts
-            var isRotate = $(this).attr("data-rotate") === "false" ? true : false;
+            var isRotate = $currentElement.attr("data-rotate") === "false" ? true : false;
             console.log(this);
-            $(this).attr("data-rotate", isRotate);
-            switch ($(this).attr("data-chart-type")) {
+            $currentElement.attr("data-rotate", isRotate);
+            var chartId = "c3-" + chartType + "-container";
+            switch (chartType) {
                 case "bar":
 
                     getBarC3Js({
-                        Id: "c3-" + $(this).attr("data-chart-type") + "-container",//$(this).attr("data-target-id"),
+                        Id: chartId,//$(this).attr("data-target-id"),
                         isRotate: isRotate
                     });
 
@@ -199,11 +202,56 @@ $(function () {
                 case "line":
 
                     getLineC3Js({
-                        Id: "c3-" + $(this).attr("data-chart-type") + "-container",//$(this).attr("data-target-id"),
+                        Id: chartId,//$(this).attr("data-target-id"),
                         isRotate: isRotate
                     });
 
                     break;
+                default:
+                    break;
+            }
+        } else if (chartLib === "chartjs") {
+            //Below code for rotate charts only works for chartsjs bar/column charts
+            var isRotate = $currentElement.attr("data-rotate") === "bar" ? "horizontalBar" : "bar";
+            //console.log(this);
+            $currentElement.attr("data-rotate", isRotate);
+            var chartId = "chart-" + chartType + "-container";
+            switch (chartType) {
+                case "bar":
+
+                    getBarChartJs({
+                        Id: chartId,//$(this).attr("data-target-id"),
+                        isRotate: isRotate
+                    });
+
+                    break;
+                default:
+                    break;
+            }
+        } else if (chartLib === "highchartjs") {
+            //Below code for rotate charts only works for chartsjs bar/column charts
+            var isRotate = $currentElement.attr("data-rotate") === "bar" ? "column" : "bar";
+            //console.log(this);
+            $currentElement.attr("data-rotate", isRotate);
+            var chartId = "hc-" + chartType + "-container";
+            switch (chartType) {
+                case "bar":
+
+                    getBarHighchart({
+                        Id: chartId,//$(this).attr("data-target-id"),
+                        isRotate: isRotate
+                    });
+
+                    break;
+                case "column":
+
+                    getColumnHighchart({
+                        Id: chartId,//$(this).attr("data-target-id"),
+                        isRotate: isRotate
+                    });
+
+                    break;
+
                 default:
                     break;
             }
