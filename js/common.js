@@ -165,6 +165,18 @@ $(function () {
     $(".togglechart").click(function () {
         togglechart(this);
     });
+    // Dashboard toggle view using switch
+    $('#toggleDashboard').change(function (e) {
+        if ($("#toggleDashboard").prop('checked')) {
+            $('.main-dashboard').hide();
+            //$('.showDataComparisionIcon').show();
+            $('.second-dashboard').show();
+        } else {
+            $('.main-dashboard').show();
+            // $('.showDataComparisionIcon').hide();
+            $('.second-dashboard').hide();
+        }
+    });
 
     $(".rotate-chart").click(function () {
         if ($(this).attr("data-lib") === "c3js") {
