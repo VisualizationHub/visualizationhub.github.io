@@ -37,9 +37,9 @@ var initCharts = function () {
     getBarChartJs({
         Id: 'chart-bar-container'
     });
-    // getDoughNutChartJs({
-    //     Id: 'chart-doughnut-container'
-    // });
+    getDoughNutChartJs({
+        Id: 'chart-doughnut-container'
+    });
 
 };
 
@@ -71,7 +71,7 @@ function zoomInCharts(options) {
             });
             break;
 
-        //c3.js
+            //c3.js
         case 'Bar Chart (C3.JS)':
             getBarC3Js({
                 Id: options.Id
@@ -95,7 +95,7 @@ function zoomInCharts(options) {
 
 
 
-        //chart.js
+            //chart.js
 
         case 'Bar Chart (Chart.JS)':
             // Temporary fix to append canvas in html for the chartjs
@@ -166,14 +166,22 @@ $(function () {
         togglechart(this);
     });
     // Dashboard toggle view using switch
-    $('#toggleDashboard').change(function (e) {
-        if ($("#toggleDashboard").prop('checked')) {
+    $('#toggleDashboard').click(function (e) {
+        var element = $("#toggleDashboard").children();
+        if ($(element).hasClass('fa-toggle-off')) {
+            $(element).toggleClass('fa-toggle-off fa-toggle-on');
+            $("#toggleDashboard").attr('title', "Click to switch main dashboard");
+            $("#dashboard-title").html('Second Dashboard');
             $('.main-dashboard').hide();
-            //$('.showDataComparisionIcon').show();
+            //temporary fixed issue common ids and charts loads
+            $('.second-dashboard').html($('.main-dashboard').html());
             $('.second-dashboard').show();
+
         } else {
+            $(element).toggleClass('fa-toggle-on fa-toggle-off');
+            $("#toggleDashboard").attr('title', "Click to switch second dashboard");
+            $("#dashboard-title").html('Main Dashboard');
             $('.main-dashboard').show();
-            // $('.showDataComparisionIcon').hide();
             $('.second-dashboard').hide();
         }
     });
@@ -194,7 +202,7 @@ $(function () {
                 case "bar":
 
                     getBarC3Js({
-                        Id: chartId,//$(this).attr("data-target-id"),
+                        Id: chartId, //$(this).attr("data-target-id"),
                         isRotate: isRotate
                     });
 
@@ -202,7 +210,7 @@ $(function () {
                 case "line":
 
                     getLineC3Js({
-                        Id: chartId,//$(this).attr("data-target-id"),
+                        Id: chartId, //$(this).attr("data-target-id"),
                         isRotate: isRotate
                     });
 
@@ -220,7 +228,7 @@ $(function () {
                 case "bar":
 
                     getBarChartJs({
-                        Id: chartId,//$(this).attr("data-target-id"),
+                        Id: chartId, //$(this).attr("data-target-id"),
                         isRotate: isRotate
                     });
 
@@ -238,7 +246,7 @@ $(function () {
                 case "bar":
 
                     getBarHighchart({
-                        Id: chartId,//$(this).attr("data-target-id"),
+                        Id: chartId, //$(this).attr("data-target-id"),
                         isRotate: isRotate
                     });
 
@@ -246,7 +254,7 @@ $(function () {
                 case "column":
 
                     getColumnHighchart({
-                        Id: chartId,//$(this).attr("data-target-id"),
+                        Id: chartId, //$(this).attr("data-target-id"),
                         isRotate: isRotate
                     });
 
@@ -258,5 +266,18 @@ $(function () {
         }
     });
 
-
+    $('body').on('click', function (e) {
+        $("[data-toggle=popover]").each(function (i, obj) {
+            $(this).popover({
+                html: true,
+                content: function () {
+                    var id = $(this).attr('id')
+                    return $('#popover-content-' + id).html();
+                }
+            });
+            if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                $(this).popover('hide');
+            }
+        });
+    });
 });

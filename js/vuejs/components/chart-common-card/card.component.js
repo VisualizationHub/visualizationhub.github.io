@@ -1,5 +1,5 @@
 // // card master component
-// Vue.component('card-master', {
+// Vue.component('chart-common-card', {
 //     props: ['class', ],
 //     template: `<div class="card card-default">
 //                 <div class="card-header">
@@ -13,7 +13,7 @@
 //                     <div class="card-title">Bar Chart (Chart.JS)</div>
 //                 </div>
 //                 <div class="card-body text-center">
-//                     <canvas id="chart-bar-container" height="169px"></canvas>
+//                     <canvas id="chart-bar-container" height="260px"></canvas>
 //                 </div>
 //                 </div>`
 // });

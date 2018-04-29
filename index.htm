@@ -78,440 +78,450 @@
                 </div>
             </nav>
         </header>
-        <div class="boxContainerDashboard dashBoard-dateFiltersSection" style="float: left;">
-            
-            <!-- <div class="panellist timeFilterDistSelect"> -->
-            <!-- <div class="checkbox" >
-                <label for="timeFilterDistSelect">Duration</label>
-                <input type="text" class="search-checkbox-btn" id="timeFilterDistSelect"  name="timeFilterDistSelect" style="width:168px;" value="01/01/2015 - 01/31/2015">
-
-            </div>
-            <div style="padding-top: 5px;">
-                <input type="button" class="dashboard-applyDateFilters js-dashboard-applyDateFilters" value="GO"/>
-            </div> -->
-            <div>
-                <label class="switch">
-                    <input id="toggleDashboard" type="checkbox" title="Click to Switch dashboard">
-                    <div class="slider round"  title="Click to Switch dashboard"></div>
-                </label>
-            </div>
-    
-            <!-- </div> -->
-
-        <div class="boxContainerDashboard dashBoard-breadCrumSections"></div>
-
-    </div>
-    <div class="clear">&nbsp;</div>
-        <main role="main" class="content-wrapper main-dashboard" id="main-dashboard">
-
-            <div class="row">
-                <div class="col col-lg-4">
-                    <div class="card card-default">
-                        <div class="card-header">
-                                <a class="float-right rotate-chart" title="Rotate Chart" data-rotate="bar" data-target-id="chart-bar-container" data-chart-type="bar"  data-lib="chartjs" data-tool="Rotate charts" data-toggle="tooltip">
-                                <i class="fas fa-redo"></i>
-                                    </a>
-                            <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
+        <div class="content-wrapper">
+            <div class="content-heading">
+                <div>
+                    <h4 id="dashboard-title">Main Dashboard</h4>
+                    <small id="dashboard-desc">Welcome to Visualization Charts Data</small>
+                </div>
+                <div class="ml-auto">
+                    <div class="btn-group">
+                        <div class="content-menuitem menuitem-toggle">
+                            <a id="toggleDashboard" title="Click to switch second dashboard">
+                                <em class="fas fa-toggle-off"></em>
                             </a>
-                            <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
-
-                            <h2 class="card-title">Bar Chart (Chart.JS)</h2>
-                        </div>
-                        <div class="card-body text-center">
-                            <canvas id="chart-bar-container" height="169px"></canvas>
                         </div>
                     </div>
-                </div>
-                <div class="col col-lg-4">
-                    <div class="card card-default ">
-                        <div class="card-header">
-                                <a class="float-right rotate-chart" title="Rotate Chart" data-chart-type="bar" data-lib="c3js"  data-target-id="c3-bar-container" data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
-                                        <i class="fas fa-redo"></i>
-                                            </a>
-                            <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
+                    <div class="btn-group">
+                        <div class="content-menuitem">
+                            <a id="viewFlags" data-toggle="popover" data-placement="right" title="Flag Counter">
+                                <em class="fas fa-flag"></em>
                             </a>
-                            <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
-
-                            <h2 class="card-title">Bar Chart (C3.JS)</h2>
-                        </div>
-                        <div class="card-body text-center">
-                            <div id="c3-bar-container" style="height: 260px;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-lg-4">
-                    <div class="card card-default ">
-                        <div class="card-header">
-                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="highchartjs" data-chart-type="bar" data-rotate="bar"  data-lib="chartjs" data-tool="Rotate charts" data-toggle="tooltip">
-                                        <i class="fas fa-redo"></i>
-                                            </a>
-                            <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in"  data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a>
-                            <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
-
-                            <h2 class="card-title">Bar Chart (Highchart.JS)</h2>
-                        </div>
-                        <div class="card-body text-center">
-                            <div id="hc-bar-container" style="height: 260px;"></div>
+                            <div id="popover-content-viewFlags" class="hide">
+                                <a href="https://info.flagcounter.com/GGqH">
+                                    <img src="https://s04.flagcounter.com/count2/GGqH/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+                                        alt="Flag Counter" border="0">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col col-lg-3">
-                    <div class="card card-default">
-                        <div class="card-header">
-                            <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a>
-                            <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
 
-                            <h2 class="card-title">Donut Chart (C3.JS)</h2>
+            <main role="main" class="main-dashboard" id="main-dashboard">
+
+                <div class="row">
+                    <div class="col col-lg-4">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-rotate="bar" data-target-id="chart-bar-container" data-chart-type="bar"
+                                    data-lib="chartjs" data-tool="Rotate charts" data-toggle="tooltip">
+                                    <i class="fas fa-redo"></i>
+                                </a>
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">Bar Chart (Chart.JS)</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <canvas id="chart-bar-container" height="169px"></canvas>
+                            </div>
                         </div>
-                        <div class="card-body text-center">
-                            <div id="c3-donut-container" style="height: 260px;"></div>
+                    </div>
+                    <div class="col col-lg-4">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-chart-type="bar" data-lib="c3js" data-target-id="c3-bar-container"
+                                    data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
+                                    <i class="fas fa-redo"></i>
+                                </a>
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">Bar Chart (C3.JS)</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="c3-bar-container" style="height: 260px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-4">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="highchartjs" data-chart-type="bar" data-rotate="bar" data-lib="chartjs"
+                                    data-tool="Rotate charts" data-toggle="tooltip">
+                                    <i class="fas fa-redo"></i>
+                                </a>
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">Bar Chart (Highchart.JS)</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="hc-bar-container" style="height: 260px;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col col-lg-3">
-                    <div class="card card-default">
-                        <div class="card-header">
-                            <a class="float-right togglechart"  title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a>
-                            <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
+                <div class="row">
+                    <div class="col col-lg-3">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
 
-                            <h2 class="card-title">Pie Chart (C3.JS)</h2>
+                                <h2 class="card-title">Donut Chart (C3.JS)</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="c3-donut-container" style="height: 260px;"></div>
+                            </div>
                         </div>
-                        <div class="card-body text-center">
-                            <div id="c3-pie-container" style="height: 260px;"></div>
+                    </div>
+                    <div class="col col-lg-3">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">Pie Chart (C3.JS)</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="c3-pie-container" style="height: 260px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-6">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">Stacked Area Chart (Highchart.JS)</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="hc-area-container" style="height: 260px;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col col-lg-6">
-                    <div class="card card-default">
-                        <div class="card-header">
-                            <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a>
-                            <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
+                <div class="row">
+                    <div class="col col-lg-8">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="highchartjs" data-chart-type="column" data-rotate="column"
+                                    data-lib="chartjs" data-tool="Rotate charts" data-toggle="tooltip">
+                                    <i class="fas fa-redo"></i>
+                                </a>
 
-                            <h2 class="card-title">Stacked Area Chart (Highchart.JS)</h2>
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">Column Chart (Highchart.JS)</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="hc-column-container" style="height: 260px;"></div>
+                            </div>
                         </div>
-                        <div class="card-body text-center">
-                            <div id="hc-area-container" style="height: 260px;"></div>
+                    </div>
+                    <div class="col col-lg-4">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">Doughnut (Chart.JS)</h2>
+
+                                <div class="card-body text-center">
+                                    <canvas id="chart-doughnut-container" height="169px"></canvas>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-lg-4">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">Pie Chart (Highchart.JS)</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="hc-pie-container" style="height: 260px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-8">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="c3js" data-chart-type="line" data-target-id="c3-line-container"
+                                    data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
+                                    <i class="fas fa-redo"></i>
+                                </a>
+
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">Line Chart (C3.JS)</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="c3-line-container" style="height: 260px;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </main>
+            <main role="main" class="second-dashboard" id="second-dashboard" style="display:none">
+
+                <!-- <div class="row">
+                    <div class="col col-lg-4">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-rotate="false" data-target-id="chart-bar-container" data-lib="chartjs"
+                                    data-tool="Rotate charts" data-toggle="tooltip">
+                                    <i class="fas fa-redo"></i>
+                                </a>
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">Bar Chart (Chart.JS)</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <canvas id="chart-bar-container1" height="169px"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-4">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-chart-type="bar" data-lib="c3js" data-target-id="c3-bar-container"
+                                    data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
+                                    <i class="fas fa-redo"></i>
+                                </a>
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <div class="card-title">Bar Chart (C3.JS)</div>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="c3-bar-container1" style="height: 260px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-4">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <div class="card-title">Bar Chart (Highchart.JS)</div>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="hc-bar-container1" style="height: 260px;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col col-lg-8">
-                    <div class="card card-default">
-                        <div class="card-header">
-                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="highchartjs" data-chart-type="column" data-rotate="column"  data-lib="chartjs" data-tool="Rotate charts" data-toggle="tooltip">
-                                        <i class="fas fa-redo"></i>
-                                            </a>
+                <div class="row">
+                    <div class="col col-lg-3">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
 
-                            <a class="float-right togglechart"  title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a>
-                            <a class="float-right"  title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
-
-                            <h2 class="card-title">Column Chart (Highchart.JS)</h2>
+                                <div class="card-title">Donut Chart (C3.JS)</div>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="c3-donut-container1" style="height: 260px;"></div>
+                            </div>
                         </div>
-                        <div class="card-body text-center">
-                            <div id="hc-column-container" style="height: 260px;"></div>
+                    </div>
+                    <div class="col col-lg-3">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <div class="card-title">Pie Chart (C3.JS)</div>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="c3-pie-container1" style="height: 260px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-6">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <div class="card-title">Stacked Area Chart (Highchart.JS)</div>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="hc-area-container1" style="height: 260px;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col col-lg-4">
-                    <div class="card card-default">
-                        <div class="card-header">
-                            <!-- <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a> -->
-                            <a class="float-right"  title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
-<!-- 
-                            <h2 class="card-title">Doughnut (Chart.JS)</h2>
-                        </div>
-                        <div class="card-body text-center">
-                            <canvas id="chart-doughnut-container" height="169px"></canvas>
-                        </div> -->
-                                                    <h2 class="card-title">Flag Counter</h2>
-                                                </div>
-                                                <div class="card-body text-center">
-                                                    <div class="container text-right"><a href="https://info.flagcounter.com/GGqH"><img src="https://s04.flagcounter.com/count2/GGqH/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a></div>
-                                                </div>
-                    </div>
-                </div>
+                <div class="row">
+                    <div class="col col-lg-8">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
 
-            </div>
-            <div class="row">
-                <div class="col col-lg-4">
-                    <div class="card card-default ">
-                        <div class="card-header">
-                            <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a>
-                            <a class="float-right"  title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
-
-                            <h2 class="card-title">Pie Chart (Highchart.JS)</h2>
-                        </div>
-                        <div class="card-body text-center">
-                            <div id="hc-pie-container" style="height: 260px;"></div>
+                                <div class="card-title">Column Chart (Highchart.JS)</div>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="hc-column-container1" style="height: 260px;"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col col-lg-8">
-                    <div class="card card-default ">
-                        <div class="card-header">                               
-                             <a class="float-right rotate-chart" title="Rotate Chart" data-lib="c3js" data-chart-type="line" data-target-id="c3-line-container" data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
-                                <i class="fas fa-redo"></i>
-                                    </a>
+                    <div class="col col-lg-4">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
 
-                            <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a>
-                            <a class="float-right"  title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
-
-                            <h2 class="card-title">Line Chart (C3.JS)</h2>
-                        </div>
-                        <div class="card-body text-center">
-                            <div id="c3-line-container" style="height: 260px;"></div>
+                                <div class="card-title">Doughnut (Chart.JS)</div>
+                            </div>
+                            <div class="card-body text-center">
+                                <canvas id="chart-doughnut-container1" height="169px"></canvas>
+                            </div>
                         </div>
                     </div>
+
                 </div>
+                <div class="row">
+                    <div class="col col-lg-4">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
 
-            </div>
-
-
-        </main>
-        <main role="main" class="content-wrapper second-dashboard" id="second-dashboard" style="display:none">
-
-            <div class="row">
-                <div class="col col-lg-4">
-                    <div class="card card-default">
-                        <div class="card-header">
-                                <a class="float-right rotate-chart" title="Rotate Chart" data-rotate="false" data-target-id="chart-bar-container" data-lib="chartjs" data-tool="Rotate charts" data-toggle="tooltip">
-                                <i class="fas fa-redo"></i>
-                                    </a>
-                            <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a>
-                            <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
-
-                            <h2 class="card-title">Bar Chart (Chart.JS)</h2>
-                        </div>
-                        <div class="card-body text-center">
-                            <canvas id="chart-bar-container1" height="169px"></canvas>
+                                <div class="card-title">Pie Chart (Highchart.JS)</div>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="hc-pie-container1" style="height: 260px;"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col col-lg-4">
-                    <div class="card card-default ">
-                        <div class="card-header">
-                                <a class="float-right rotate-chart" title="Rotate Chart" data-chart-type="bar" data-lib="c3js"  data-target-id="c3-bar-container" data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
-                                        <i class="fas fa-redo"></i>
-                                            </a>
-                            <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a>
-                            <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
+                    <div class="col col-lg-8">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="c3js" data-chart-type="line" data-target-id="c3-line-container"
+                                    data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
+                                    <i class="fas fa-redo"></i>
+                                </a>
 
-                            <div class="card-title">Bar Chart (C3.JS)</div>
-                        </div>
-                        <div class="card-body text-center">
-                            <div id="c3-bar-container1" style="height: 260px;"></div>
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <div class="card-title">Line Chart (C3.JS)</div>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="c3-line-container1" style="height: 260px;"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col col-lg-4">
-                    <div class="card card-default ">
-                        <div class="card-header">
-                            <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a>
-                            <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
 
-                            <div class="card-title">Bar Chart (Highchart.JS)</div>
-                        </div>
-                        <div class="card-body text-center">
-                            <div id="hc-bar-container1" style="height: 260px;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col col-lg-3">
-                    <div class="card card-default">
-                        <div class="card-header">
-                            <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a>
-                            <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
-
-                            <div class="card-title">Donut Chart (C3.JS)</div>
-                        </div>
-                        <div class="card-body text-center">
-                            <div id="c3-donut-container1" style="height: 260px;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-lg-3">
-                    <div class="card card-default">
-                        <div class="card-header">
-                            <a class="float-right togglechart"  title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a>
-                            <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
-
-                            <div class="card-title">Pie Chart (C3.JS)</div>
-                        </div>
-                        <div class="card-body text-center">
-                            <div id="c3-pie-container1" style="height: 260px;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-lg-6">
-                    <div class="card card-default">
-                        <div class="card-header">
-                            <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a>
-                            <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
-
-                            <div class="card-title">Stacked Area Chart (Highchart.JS)</div>
-                        </div>
-                        <div class="card-body text-center">
-                            <div id="hc-area-container1" style="height: 260px;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col col-lg-8">
-                    <div class="card card-default">
-                        <div class="card-header">
-                            <a class="float-right togglechart"  title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a>
-                            <a class="float-right"  title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
-
-                            <div class="card-title">Column Chart (Highchart.JS)</div>
-                        </div>
-                        <div class="card-body text-center">
-                            <div id="hc-column-container1" style="height: 260px;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-lg-4">
-                    <div class="card card-default">
-                        <div class="card-header">
-                            <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a>
-                            <a class="float-right"  title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
-
-                            <div class="card-title">Doughnut (Chart.JS)</div>
-                        </div>
-                        <div class="card-body text-center">
-                            <canvas id="chart-doughnut-container1" height="169px"></canvas>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col col-lg-4">
-                    <div class="card card-default ">
-                        <div class="card-header">
-                            <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a>
-                            <a class="float-right"  title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
-
-                            <div class="card-title">Pie Chart (Highchart.JS)</div>
-                        </div>
-                        <div class="card-body text-center">
-                            <div id="hc-pie-container1" style="height: 260px;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-lg-8">
-                    <div class="card card-default ">
-                        <div class="card-header">                               
-                             <a class="float-right rotate-chart" title="Rotate Chart" data-lib="c3js" data-chart-type="line" data-target-id="c3-line-container" data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
-                                <i class="fas fa-redo"></i>
-                                    </a>
-
-                            <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
-                                <i class="fas fa-arrows-alt"></i>
-                            </a>
-                            <a class="float-right"  title="View Source" data-tool="view-source" data-toggle="tooltip">
-                                <em class="fa fa-eye"></em>
-                            </a>
-
-                            <div class="card-title">Line Chart (C3.JS)</div>
-                        </div>
-                        <div class="card-body text-center">
-                            <div id="c3-line-container1" style="height: 260px;"></div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+                </div> -->
 
 
-        </main>
-
+            </main>
+        </div>
         <footer class="footer">
             <div class="container text-center">
                 <span class="text-muted">Charts Hub @2018</span>
             </div>
-            
-        </footer>
 
+        </footer>
 
     </div>
 
@@ -524,7 +534,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" >
+                <div class="modal-body">
                     <div id="zoombody" style="height: 500px;"></div>
                 </div>
             </div>
@@ -573,8 +583,8 @@
 
     <script src="js/common.js"></script>
     <!-- Google Analytics -->
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91024451-2"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91024451-2"></script>
     <script>
         window.ga = window.ga || function () {
             (ga.q = ga.q || []).push(arguments)
@@ -583,7 +593,7 @@
         ga('create', 'UA-91024451-2', 'auto');
         ga('send', 'pageview');
     </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script> 
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
 
     <!-- End Google Analytics -->
 
