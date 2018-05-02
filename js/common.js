@@ -97,7 +97,12 @@ function zoomInCharts(options) {
                 Id: options.Id
             });
             break;
-
+            case 'Bar Chart (Tui Chart.JS)':
+            getBarTuiChart({
+                Id: options.Id
+            });
+            break;
+            
 
 
             //chart.js
