@@ -41,6 +41,11 @@ var initCharts = function () {
         Id: 'chart-doughnut-container'
     });
 
+        //tuichart.js
+    getBarTuiChart({
+        Id:"tui-bar-container"
+    });
+
 };
 
 
