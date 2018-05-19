@@ -15,9 +15,9 @@ var data = {
 };
 var options = {
     chart: {
-        width: 1160,
-        height: 650,
-        title: 'Monthly Revenue',
+        // width: 600,
+        // height: 250,
+         title: 'Monthly Revenue',
         format: '1,000'
     },
     yAxis: {
@@ -43,8 +43,8 @@ var theme = {
 
 // tui.chart.registerTheme('myTheme', theme);
 // options.theme = 'myTheme';
-setTimeout(() => {
-    tui.chart.barChart(document.getElementById(element), data, options);
+
+    tui.chart.barChart(document.getElementById(element.Id), data, options);
     
-}, 100);
+
 }
