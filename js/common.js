@@ -13,6 +13,9 @@ var initCharts = function () {
     getPieHighchart({
         Id: 'hc-pie-container'
     });
+    getBubbleHighchart({
+        Id: 'hc-bubble-container'
+    });
 
     //c3.js
     getBarC3Js({
@@ -31,6 +34,10 @@ var initCharts = function () {
         Id: 'c3-pie-container'
     });
 
+    getBubbleC3Js({
+        Id: 'c3-bubble-container'
+    });
+
 
 
     //chart.js
@@ -40,10 +47,13 @@ var initCharts = function () {
     getDoughNutChartJs({
         Id: 'chart-doughnut-container'
     });
+    getBubbleChartJs({
+        Id: 'chart-bubble-container'
+    });
 
-        //tuichart.js
+    //tuichart.js
     getBarTuiChart({
-        Id:"tui-bar-container"
+        Id: "tui-bar-container"
     });
 
 };
@@ -75,8 +85,13 @@ function zoomInCharts(options) {
                 Id: options.Id
             });
             break;
+        case 'Bubble Chart (Highchart.JS)':
+            getBubbleHighchart({
+                Id: options.Id
+            });
+            break;
 
-            //c3.js
+        //c3.js
         case 'Bar Chart (C3.JS)':
             getBarC3Js({
                 Id: options.Id
@@ -97,15 +112,20 @@ function zoomInCharts(options) {
                 Id: options.Id
             });
             break;
-            case 'Bar Chart (Tui Chart.JS)':
+        case 'Bar Chart (Tui Chart.JS)':
             getBarTuiChart({
                 Id: options.Id
             });
             break;
-            
+        case 'Bubble Chart (C3.JS)':
+            getBubbleC3Js({
+                Id: options.Id
+            });
+            break;
 
 
-            //chart.js
+
+        //chart.js
 
         case 'Bar Chart (Chart.JS)':
             // Temporary fix to append canvas in html for the chartjs
@@ -126,6 +146,17 @@ function zoomInCharts(options) {
             document.getElementById(options.Id).appendChild(canv2); // adds the canvas
 
             getDoughNutChartJs({
+                Id: "chart-zoom"
+            });
+            break;
+        case 'Bubble Chart (Chart.JS)':
+            // Temporary fix to append canvas in html for the chartjs
+            var canv2 = document.createElement("canvas");
+
+            canv2.setAttribute("id", "chart-zoom");
+            document.getElementById(options.Id).appendChild(canv2); // adds the canvas
+
+            getBubbleChartJs({
                 Id: "chart-zoom"
             });
             break;

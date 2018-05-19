@@ -341,6 +341,64 @@
                     </div>
 
                 </div>
+                <div class="row">
+                    <div class="col col-lg-12">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+                                <div class="card-title">Bubble Chart (Highchart.JS)</div>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="hc-bubble-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-12">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right rotate-chart" title="Roate Chart" data-lib="c3js" data-chart-type="bubble" data-target-id="c3-bubble-container"
+                                    data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
+                                    <i class="fas fa-redo"></i>
+                                </a>
+    
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+    
+                                <div class="card-title">Bubble Chart (C3.JS)</div>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="c3-bubble-container" style="height: 300px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-12">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+                                <div class="card-title">Bubble Chart (Chart.JS)</div>
+                            </div>
+                            <div class="card-body text-center">
+                                <!-- <div id="chart-bubble-container" style="height: 260px;"></div> -->
+                                    <canvas id="chart-bubble-container" height="100px"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
 
             </main>
@@ -584,6 +642,8 @@
     <!--highchart.js-->
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.7/highcharts.js"></script>
+    <!-- This refernce file used for bubble chart-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.7/highcharts-more.js"></script>
 
     <script type='text/javascript' src='https://rawgit.com/nhnent/tui.code-snippet/v1.3.0/dist/tui-code-snippet.js'></script>
     <script type='text/javascript' src='https://rawgit.com/nhnent/raphael/v2.2.0b/raphael.js'></script>
@@ -602,15 +662,18 @@
     <script src="js/highcharts/pie.js"></script>
     <script src="js/highcharts/column.js"></script>
     <script src="js/highcharts/area.js"></script>
+    <script src="js/highcharts/bubble.js"></script>
     <!--C3.js-->
     <script src="js/c3js/bar.js"></script>
     <script src="js/c3js/line.js"></script>
     <script src="js/c3js/donut.js"></script>
     <script src="js/c3js/pie.js"></script>
+    <script src="js/c3js/bubble.js"></script>
 
     <!--Chart.js-->
     <script src="js/chartjs/bar.js"></script>
     <script src="js/chartjs/doughnut.js"></script>
+    <script src="js/chartjs/bubble.js"></script>
     <!--TuiChart.js-->
     <script src="js/tuichart/bar.js"></script>
     
