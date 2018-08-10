@@ -47,4 +47,4 @@ var theme = {
     tui.chart.barChart(document.getElementById(element.Id), data, options);
     
 
-}
+};
