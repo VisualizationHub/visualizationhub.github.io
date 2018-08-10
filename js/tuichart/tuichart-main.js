@@ -1,5 +1,5 @@
 var getBarTuiChart = function(element) {
-    console.log(element.Data);
+    //console.log(element.Data);
     var categoryData = ["Articles", "Blogs", "Links", "Videos", "News"];
     // Old Code which filter using underscore js
     // var topData = _.chain(element.Data)
@@ -12,13 +12,13 @@ var getBarTuiChart = function(element) {
     //    var topData = _.chain(element.Data).sortBy(function(item) { return parseFloat(item.categoryData[0].count); }).reverse().take(10).value();
     // Much better optimized result for descending order by multiply by -1  
     //var topData = _.chain(element.Data).sortBy(function(item) { return -1 * parseFloat(item.categoryData[0].count); }).take(10).value();
-    var topData = _.chain(element.Data).sortBy(function(item) { return -1 * parseFloat(item.categoryData[categoryData.indexOf("Articles")].count); }).take(10).value();
+    var topData = _.chain(element.Data).sortBy(function(item) { return -1 * parseFloat(item.categoryData[categoryData.indexOf(element.chartsFor)].count); }).take(10).value();
 
 
     var data = {
         // categories: _.pluck(topData,'category'),
-        categories: ['Articles'],
-        series: _.map(topData, function(e) { var ele = _.find(e.categoryData, (e) => { return e.categoryType === "Articles" ? e.count : 0; }); return { name: e.category, data: parseInt(ele.count) }; })
+        categories: [element.chartsFor],
+        series: _.map(topData, function(e) { var ele = _.find(e.categoryData, (e) => { return e.categoryType === element.chartsFor ? e.count : 0; }); return { name: e.category, data: parseInt(ele.count) }; })
     };
     /**Commented below old code for generate tui bar charts, it looks very redudant */
     /*
@@ -57,7 +57,7 @@ var getBarTuiChart = function(element) {
 
     //tui.chart.barChart(document.getElementById(element.Id), data, options);
 */
-    var chartOptions = { "chartTitle": "Technology wise contributed Article counts", "xAxisTitle": "Article count", "yAxisTitle": "Technologies" };
+    var chartOptions = { "chartTitle": "Technology wise contributed " + element.chartsFor + " counts", "xAxisTitle": element.chartsFor + " count", "yAxisTitle": "Technologies" };
     var chartData = { selector: element.Id, options: chartOptions, data: data };
     tuiUtils.drawBarChart(chartData);
 };
