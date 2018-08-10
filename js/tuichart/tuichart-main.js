@@ -7,7 +7,7 @@ var getBarTuiChart=function(element){
 
  var data = {
    // categories: _.pluck(topData,'category'),
-   categories: ['category'],
+   categories: ['Articles'],
     series: _.map(topData, function(e){ var ele = _.find(e.categoryData, (e) => { return e.categoryType === "Articles"?e.count:0; }); return {name:e.category, data:parseInt(ele.count)};})
 };
 var options = {
@@ -18,7 +18,7 @@ var options = {
         format: '1,000'
     },
     yAxis: {
-        title: 'category'
+        title: 'Articles'
     },
     xAxis: {
         title: 'Count',
