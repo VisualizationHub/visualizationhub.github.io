@@ -58,6 +58,8 @@ var prepareDataPassedIntoCharts = function() {
     promise.done(function(data) {
         console.log(data);
         initCharts(data);
+
+        $("#dashboard-summary").html(prepareSummary(data));
     });
 
     promise.fail(function() {
@@ -65,7 +67,31 @@ var prepareDataPassedIntoCharts = function() {
     });
 };
 
+var prepareSummary = function(data) {
+    var seriesData = {};
+    var htmlContent = "";
+    var totalContribution = 0;
+    _.each(data, function(category) {
 
+        _.each(category.categoryData, function(subCategory) {
+            // Check category type exist or not is not exist then add key and assign empty array to it
+            if (!_.has(seriesData, subCategory.categoryType)) {
+                // To generate dynamic key for empty object ""+ Must required
+                seriesData["" + subCategory.categoryType] = [];
+            }
+            // Push Category wise count bsed on categorytype e.g.  News Article for each technology category
+            seriesData[subCategory.categoryType].push(parseFloat(subCategory.count));
+        });
+
+    });
+    for (var key in seriesData) {
+        var totalCount = _.sum(seriesData[key]);
+        totalContribution += totalCount;
+        htmlContent += "<li> Total " + key + " Count : <b>" + totalCount + " </b></li>";
+    }
+    return "<li> Total Technology Categories :  <b>" + data.length + " </b></li>" + "<li> Total Contribution Count :  <b>" + totalContribution + " </b></li>" + htmlContent;
+
+};
 // sampledata if getJsonData is not failed.
 var sampledata = [{
         "category": "Algorithms in C#",

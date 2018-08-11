@@ -92,11 +92,13 @@ html {
 
 .menuitem-toggle {
     font-size: 30px;
-    padding: 12px 13px !important; 
+    padding: 12px 13px !important;
 }
-.hide{
+
+.hide {
     display: none;
 }
+
 .content-menuitem {
     padding: 15px 13px;
     background: #fff;
@@ -6735,6 +6737,7 @@ body .jvectormap-zoomout {
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)
 }
 
+
 /*Style for popup*/
 
 #datasetComparsionPopup {
@@ -6762,7 +6765,9 @@ body .jvectormap-zoomout {
     color: #fb7536;
 }
 
+
 /*popup*/
+
 
 /* Outer */
 
@@ -6776,6 +6781,7 @@ body .jvectormap-zoomout {
     background: rgba(0, 0, 0, 0.75);
     z-index: 1000000;
 }
+
 
 /* Inner */
 
@@ -6792,6 +6798,7 @@ body .jvectormap-zoomout {
     border-radius: 3px;
     background: #fff;
 }
+
 
 /* Close Button */
 
@@ -6817,6 +6824,7 @@ body .jvectormap-zoomout {
 .rotate-chart {
     cursor: pointer;
 }
+
 
 /*Switch styles*/
 
@@ -6877,6 +6885,7 @@ body .jvectormap-zoomout {
     transform: translateX(26px);
 }
 
+
 /* Rounded sliders */
 
 .dashboardWrap .slider.round,
@@ -6897,4 +6906,8 @@ body .jvectormap-zoomout {
 
 .clear {
     clear: both;
+}
+
+#dashboard-summary {
+    text-align: left;
 }

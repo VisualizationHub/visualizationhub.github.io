@@ -73,7 +73,7 @@ var getBarTuiChart = function(element) {
         "chartTitle": "Technology wise contributed " + element.chartsFor + " counts",
         "xAxisTitle": element.chartsFor + " count",
         "yAxisTitle": "Technologies",
-        "width": 600,
+        "width": 550,
         "height": 400
     };
     var chartData = {
