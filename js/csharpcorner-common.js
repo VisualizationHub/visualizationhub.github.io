@@ -17,15 +17,31 @@ var initCharts = function(data) {
         Data: data,
         chartsFor: "Videos"
     });
-
-
-
-
+    getFullWidthColumnTuiChart({
+        Id: "tui-bar-full-container",
+        Data: data,
+        chartsFor: "All Category"
+    });
+    getPieTuiChart({
+        Id: "tui-pie-dotnet-container",
+        Data: data,
+        chartsFor: "ASP.NET" // Write name same as available keys in charts data 
+    });
+    getPieTuiChart({
+        Id: "tui-pie-sharepoint-container",
+        Data: data,
+        chartsFor: "SharePoint" // Write name same as available keys in charts data 
+    });
+    getPieTuiChart({
+        Id: "tui-pie-csharp-container",
+        Data: data,
+        chartsFor: "C#" // Write name same as available keys in charts data 
+    });
 };
 
 function zoomInCharts(options) {
     console.log("zoomInCharts called ...");
-};
+}
 
 $(function() {
     console.log("DOM is ready");
@@ -40,6 +56,7 @@ var prepareDataPassedIntoCharts = function() {
     var promise = $.getJSON('data/csharpcorner.json');
 
     promise.done(function(data) {
+        console.log(data);
         initCharts(data);
     });
 
