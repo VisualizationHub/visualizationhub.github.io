@@ -69,7 +69,7 @@ var prepareDataPassedIntoCharts = function() {
 
 var prepareSummary = function(data) {
     var seriesData = {};
-    var htmlContent = "";
+ //   var htmlContent = "";
     var totalContribution = 0;
     _.each(data, function(category) {
 
@@ -84,12 +84,17 @@ var prepareSummary = function(data) {
         });
 
     });
+
+
     for (var key in seriesData) {
         var totalCount = _.sum(seriesData[key]);
         totalContribution += totalCount;
-        htmlContent += "<li> Total " + key + " Count : <b>" + totalCount + " </b></li>";
+   //     htmlContent += "<li> Total " + key + " Count : <b>" + totalCount + " </b></li>";
+        $("." + key).html(totalCount);
     }
-    return "<li> Total Technology Categories :  <b>" + data.length + " </b></li>" + "<li> Total Contribution Count :  <b>" + totalContribution + " </b></li>" + htmlContent;
+    $(".Technology").html(data.length);
+    $(".Contribution").html(totalContribution);
+   // return "<li> Total Technology Categories :  <b>" + data.length + " </b></li>" + "<li> Total Contribution Count :  <b>" + totalContribution + " </b></li>" + htmlContent;
 
 };
 // sampledata if getJsonData is not failed.

@@ -6,7 +6,7 @@ var tuiUtils = (function() {
             visible: false // default is true.
         },
         chart: {
-            width: 600,
+            width: 470,
             height: 250,
             title: 'Chart Title',
             format: '1,000'
@@ -67,7 +67,7 @@ var tuiUtils = (function() {
                 visible: false // default is true.
             },
             chart: {
-                width: 500,
+                width: 350,
                 height: 400,
                 title: 'Contibution of Dot Net Articles'
             },
