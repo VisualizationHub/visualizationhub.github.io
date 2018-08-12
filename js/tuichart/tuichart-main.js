@@ -21,7 +21,7 @@ var getBarTuiChart = function(element) {
         // categories: _.pluck(topData,'category'),
         categories: [element.chartsFor],
         series: _.map(topData, function(e) {
-            var ele = _.find(e.categoryData, (e) => {
+            var ele = _.find(e.categoryData, function(e) {
                 return e.categoryType === element.chartsFor ? e.count : 0;
             });
             return {
@@ -31,44 +31,6 @@ var getBarTuiChart = function(element) {
         })
     };
 
-
-    /**Commented below old code for generate tui bar charts, it looks very redudant */
-    /*
-    // var options = {
-        
-    //     chart: {
-    //         // width: 600,
-    //         // height: 250,
-    //         title: 'Technology wise contributed Article counts',
-    //         format: '1,000'
-    //     },
-    //     yAxis: {
-    //         title: 'Articles'
-    //     },
-    //     xAxis: {
-    //         title: 'Count',
-    //         min: 0,
-    //         //max: 9000,
-    //         // suffix: '$'
-    //     },
-    //     series: { showLabel: true }
-    // };
-    // var theme = {
-    //     series: {
-    //         colors: [
-    //             '#83b14e', '#458a3f', '#295ba0', '#2a4175', '#289399',
-    //             '#289399', '#617178', '#8a9a9a', '#516f7d', '#dddddd'
-    //         ]
-    //     }
-    // };
-
-    // For apply theme
-
-    // tui.chart.registerTheme('myTheme', theme);
-    // options.theme = 'myTheme';
-
-    //tui.chart.barChart(document.getElementById(element.Id), data, options);
-*/
     var chartOptions = {
         "chartTitle": "Technology wise contributed " + element.chartsFor + " counts",
         "xAxisTitle": element.chartsFor + " count",
@@ -87,36 +49,10 @@ var getBarTuiChart = function(element) {
 var getFullWidthColumnTuiChart = function(element) {
     //console.log(element.Data);
     var categoryData = ["Articles", "Blogs", "Links", "Videos", "News"];
-    // Old Code which filter using underscore js
-    // var topData = _.chain(element.Data)
-    //     .sortBy(function(item) { var ele = _.find(item.categoryData, (e) => { return e.categoryType === "Articles" ? e.count : 0; }); return parseInt(ele.count) * -1; })
-    //     .first(10)
-    //     .value();
-
-    //// New code which filter using lodash js
-    // First custom sort by integer count by converting it to float then reverse result
-    //    var topData = _.chain(element.Data).sortBy(function(item) { return parseFloat(item.categoryData[0].count); }).reverse().take(10).value();
-    // Much better optimized result for descending order by multiply by -1  
-    //var topData = _.chain(element.Data).sortBy(function(item) { return -1 * parseFloat(item.categoryData[0].count); }).take(10).value();
     var topData = _.chain(element.Data).sortBy(function(item) {
         // For All Category 
         return -1 * parseFloat(item.categoryData[categoryData.indexOf("Articles")].count);
     }).take(10).value();
-    //  console.log(topData);
-    // Generate series data based on technology
-    // var data = {
-    //     // categories: _.pluck(topData,'category'),
-    //     categories: [element.chartsFor],
-    //     series: _.map(topData, function(e) {
-    //         var ele = _.find(e.categoryData, (e) => {
-    //             return e.categoryType === element.chartsFor ? e.count : 0;
-    //         });
-    //         return {
-    //             name: e.category,
-    //             data: parseInt(ele.count)
-    //         };
-    //     })
-    // };
 
     // Generete series data for contribution based on specific technology e.g. Asp.net 
     // Here if we have DTO or AutoMap type mechanism then this code will be a lot much easier
@@ -131,16 +67,20 @@ var getFullWidthColumnTuiChart = function(element) {
         newItem.categories.push(item.category);
         // Creted new propperty for pluck or map all categories in single array
         newItem.categoryName = item.category;
-        newItem.series = _.map(item.categoryData, (function(item) {
-            return {
-                name: item.categoryType,
-                data: item.count
-            };
-        }));
+        // OLD Code for transform array of one object to another object
+        // newItem.series = _.map(item.categoryData, (function(item) {
+        //     return {
+        //         name: item.categoryType,
+        //         data: item.count
+        //     };
+        // }));
+
+        // Transform array of one object to another object
+        newItem.series = DTO.mapTo(item.categoryData, { "categoryType": "name", "count": "data" });
 
         _.map(item.categoryData, function(subCategory) {
             // _.map(category, function(subCategory) {
-            // Check category type exist or not is not exist then add key and assign empty array to it
+            // Check category type exist or not if not exist then add key and assign empty array to it
             if (!_.has(seriesData, subCategory.categoryType)) {
                 seriesData["" + subCategory.categoryType] = [];
             }
@@ -153,14 +93,6 @@ var getFullWidthColumnTuiChart = function(element) {
 
     });
     console.log(seriesData);
-    // Generate key value pair of each technology contribution
-    // _.map(seriesData, function(value, key) {
-    //     return {
-    //         name: key,
-    //         data: value
-    //     };
-    // });
-
 
     //Combined Category and series data
     var mixedSeriesData = {
@@ -172,48 +104,7 @@ var getFullWidthColumnTuiChart = function(element) {
             };
         })
     };
-    // console.log(mixedSeriesData);
-    // Generete multi series data for contribution based on Article, blogs, news etc technology wise
-    // Here if we have DTO or AutoMap type mechanism then this code will be a lot much easier
 
-
-    /**Commented below old code for generate tui bar charts, it looks very redudant */
-    /*
-    // var options = {
-        
-    //     chart: {
-    //         // width: 600,
-    //         // height: 250,
-    //         title: 'Technology wise contributed Article counts',
-    //         format: '1,000'
-    //     },
-    //     yAxis: {
-    //         title: 'Articles'
-    //     },
-    //     xAxis: {
-    //         title: 'Count',
-    //         min: 0,
-    //         //max: 9000,
-    //         // suffix: '$'
-    //     },
-    //     series: { showLabel: true }
-    // };
-    // var theme = {
-    //     series: {
-    //         colors: [
-    //             '#83b14e', '#458a3f', '#295ba0', '#2a4175', '#289399',
-    //             '#289399', '#617178', '#8a9a9a', '#516f7d', '#dddddd'
-    //         ]
-    //     }
-    // };
-
-    // For apply theme
-
-    // tui.chart.registerTheme('myTheme', theme);
-    // options.theme = 'myTheme';
-
-    //tui.chart.barChart(document.getElementById(element.Id), data, options);
-*/
     var chartOptions = {
         "chartTitle": "Technology wise contributed " + element.chartsFor + " counts",
         "xAxisTitle": element.chartsFor + " count",
@@ -232,79 +123,31 @@ var getFullWidthColumnTuiChart = function(element) {
 
 
 var getPieTuiChart = function(element) {
-    //console.log(element.Data);
-    var categoryData = ["Articles", "Blogs", "Links", "Videos", "News"];
-    // Old Code which filter using underscore js
-    // var topData = _.chain(element.Data)
-    //     .sortBy(function(item) { var ele = _.find(item.categoryData, (e) => { return e.categoryType === "Articles" ? e.count : 0; }); return parseInt(ele.count) * -1; })
-    //     .first(10)
-    //     .value();
-
-    //// New code which filter using lodash js
-    // First custom sort by integer count by converting it to float then reverse result
-    //    var topData = _.chain(element.Data).sortBy(function(item) { return parseFloat(item.categoryData[0].count); }).reverse().take(10).value();
-    // Much better optimized result for descending order by multiply by -1  
-    //var topData = _.chain(element.Data).sortBy(function(item) { return -1 * parseFloat(item.categoryData[0].count); }).take(10).value();
-
-    // No need to sort data by highest article count
-    // var topData = _.chain(element.Data).sortBy(function(item) {
-    //     return -1 * parseFloat(item.categoryData[categoryData.indexOf("Articles")].count);
-    // }).take(10).value();
-
+    // Filter or grab data based on provided category e.g. "ASP.NET"
     var filterCategoryData = _.find(element.Data, {
         category: element.chartsFor
     });
-    //  console.log(topData);
-    // Generate series data based on technology
+
+    // OLD CODE to Generate series data based by static way to renaming key in json data
+    // // Generate series data based on technology
+    // var data = {
+    //     // categories: _.pluck(topData,'category'),
+    //     categories: [element.chartsFor],
+    //     series: _.map(filterCategoryData.categoryData, function(e) {
+    //         return {
+    //             name: e.categoryType,
+    //             data: parseInt(e.count)
+    //         };
+    //     })
+    // };
+
+    //Generate series data by renaming key in json data dynamic way.
     var data = {
         // categories: _.pluck(topData,'category'),
         categories: [element.chartsFor],
-        series: _.map(filterCategoryData.categoryData, function(e) {
-            return {
-                name: e.categoryType,
-                data: parseInt(e.count)
-            };
-        })
+        series: DTO.mapTo(filterCategoryData.categoryData, { "categoryType": "name", "count": "data" })
     };
 
-
-    /**Commented below old code for generate tui bar charts, it looks very redudant */
-    /*
-    // var options = {
-        
-    //     chart: {
-    //         // width: 600,
-    //         // height: 250,
-    //         title: 'Technology wise contributed Article counts',
-    //         format: '1,000'
-    //     },
-    //     yAxis: {
-    //         title: 'Articles'
-    //     },
-    //     xAxis: {
-    //         title: 'Count',
-    //         min: 0,
-    //         //max: 9000,
-    //         // suffix: '$'
-    //     },
-    //     series: { showLabel: true }
-    // };
-    // var theme = {
-    //     series: {
-    //         colors: [
-    //             '#83b14e', '#458a3f', '#295ba0', '#2a4175', '#289399',
-    //             '#289399', '#617178', '#8a9a9a', '#516f7d', '#dddddd'
-    //         ]
-    //     }
-    // };
-
-    // For apply theme
-
-    // tui.chart.registerTheme('myTheme', theme);
-    // options.theme = 'myTheme';
-
-    //tui.chart.barChart(document.getElementById(element.Id), data, options);
-*/
     var chartOptions = {
         "chartTitle": 'Contibution of ' + element.chartsFor + " Articles",
         "xAxisTitle": element.chartsFor + " count",

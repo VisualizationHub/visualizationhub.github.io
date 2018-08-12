@@ -79,7 +79,7 @@ var prepareSummary = function(data) {
                 // To generate dynamic key for empty object ""+ Must required
                 seriesData["" + subCategory.categoryType] = [];
             }
-            // Push Category wise count bsed on categorytype e.g.  News Article for each technology category
+            // Push Category wise count based on categorytype e.g.  News Article for each technology category
             seriesData[subCategory.categoryType].push(parseFloat(subCategory.count));
         });
 
