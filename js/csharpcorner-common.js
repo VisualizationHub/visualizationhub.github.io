@@ -1,7 +1,7 @@
 var dashboardData = [];
 
 // common initial function to bind and pass data into chart
-var initCharts = function (data) {
+var initCharts = function(data) {
     //tuichart.js
     getBarTuiChart({
         Id: "tui-bar-container",
@@ -98,7 +98,7 @@ function zoomInCharts(options) {
 }
 
 
-var togglechart = function (e) {
+var togglechart = function(e) {
     console.log("togglechart BUTTON CLICKED.");
 
     console.log(e);
@@ -121,7 +121,7 @@ var togglechart = function (e) {
 
     // Update requested charts in Zoom mode
     // For Temporary purpose used setTimout function as popup opened after zoomInCharts function
-    setTimeout(function () {
+    setTimeout(function() {
         zoomInCharts({
             title: chartTitle,
             Id: 'zoombody',
@@ -134,23 +134,23 @@ var togglechart = function (e) {
 };
 
 
-$(function () {
+$(function() {
     console.log("DOM is ready");
-    
-    
-    $(".togglechart").click(function () {
+
+
+    $(".togglechart").click(function() {
         togglechart(this);
     });
 
     prepareDataPassedIntoCharts();
 
 
-    $('body').on('click', function (e) {
-        $("[data-toggle=popover]").each(function (i, obj) {
+    $('body').on('click', function(e) {
+        $("[data-toggle=popover]").each(function(i, obj) {
             $(this).popover({
                 html: true,
-                content: function () {
-                    var id = $(this).attr('id')
+                content: function() {
+                    var id = $(this).attr('id');
                     return $('#popover-content-' + id).html();
                 }
             });
@@ -165,29 +165,29 @@ $(function () {
 
 
 
-var prepareDataPassedIntoCharts = function () {
+var prepareDataPassedIntoCharts = function() {
     var promise = $.getJSON('data/csharpcorner.json');
 
-    promise.done(function (data) {
+    promise.done(function(data) {
         console.log(data);
         dashboardData = data;
         initCharts(data);
         $("#dashboard-summary").html(prepareSummary(data));
     });
 
-    promise.fail(function () {
+    promise.fail(function() {
         dashboardData = sampledata;
         initCharts(sampledata);
     });
 };
 
-var prepareSummary = function (data) {
+var prepareSummary = function(data) {
     var seriesData = {};
     //   var htmlContent = "";
     var totalContribution = 0;
-    _.each(data, function (category) {
+    _.each(data, function(category) {
 
-        _.each(category.categoryData, function (subCategory) {
+        _.each(category.categoryData, function(subCategory) {
             // Check category type exist or not is not exist then add key and assign empty array to it
             if (!_.has(seriesData, subCategory.categoryType)) {
                 // To generate dynamic key for empty object ""+ Must required
@@ -204,10 +204,10 @@ var prepareSummary = function (data) {
         var totalCount = _.sum(seriesData[key]);
         totalContribution += totalCount;
         //     htmlContent += "<li> Total " + key + " Count : <b>" + totalCount + " </b></li>";
-        $("." + key).html(doNumberFormat(totalCount, 0));
+        $("." + key).html(doNumberFormat(totalCount, 0)).attr("title", totalCount);
     }
-    $(".Technology").html(doNumberFormat(data.length));
-    $(".Contribution").html(doNumberFormat(totalContribution));
+    $(".Technology").html(doNumberFormat(data.length)).attr("title", data.length);
+    $(".Contribution").html(doNumberFormat(totalContribution)).attr("title", totalContribution);
     // return "<li> Total Technology Categories :  <b>" + data.length + " </b></li>" + "<li> Total Contribution Count :  <b>" + totalContribution + " </b></li>" + htmlContent;
 
 };
@@ -268,6 +268,8 @@ var sampledata = [{
 
 
 function doNumberFormat(number, decPlaces) {
+    // Default value for decimal Place is 0 if not passed in argument
+    if (!decPlaces) { decPlaces = 0; }
     // 2 decimal places => 100, 3 => 1000, etc
     decPlaces = Math.pow(10, decPlaces);
 
