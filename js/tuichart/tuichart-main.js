@@ -35,7 +35,7 @@ var getBarTuiChart = function(element) {
         "chartTitle": "Technology wise contributed " + element.chartsFor + " counts",
         "xAxisTitle": element.chartsFor + " count",
         "yAxisTitle": "Technologies",
-        "width": 550,
+        "width": 470,
         "height": 400
     };
     var chartData = {
@@ -152,7 +152,7 @@ var getPieTuiChart = function(element) {
         "chartTitle": 'Contibution of ' + element.chartsFor + " Articles",
         "xAxisTitle": element.chartsFor + " count",
         "yAxisTitle": "Technologies",
-        "width": 300,
+        "width": 470,
         "height": 300
     };
     var chartData = {

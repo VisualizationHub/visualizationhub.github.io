@@ -30,8 +30,10 @@
 
     <link rel="icon" href="favicon.ico">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.5.1/c3.min.css">
     <link red="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.7/css/highcharts.css">
 
@@ -45,7 +47,8 @@
     <div class="wrapper dashboardWrap">
         <header class="topnavbar-wrapper">
             <nav class="navbar navbar-expand-lg navbar-light bg-light box-shadow">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
@@ -85,7 +88,9 @@
         <div class="content-wrapper">
             <div class="content-heading">
                 <div>
-                    <h4 id="dashboard-title">C# Corner Dashboard - Unofficial</h4>
+                    <h4 id="dashboard-title">
+                        <a href="https://www.c-sharpcorner.com/technologies" target="_blank">C# Corner Contribution Dashboard - Unofficial</a>
+                    </h4>
                     <small id="dashboard-desc">Welcome to Technology wise statistics</small>
                 </div>
                 <div class="ml-auto">
@@ -103,7 +108,8 @@
                             </a>
                             <div id="popover-content-viewFlags" class="hide">
                                 <a href="https://info.flagcounter.com/GGqH">
-                                    <img src="https://s04.flagcounter.com/count2/GGqH/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0">
+                                    <img src="https://s04.flagcounter.com/count2/GGqH/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+                                        alt="Flag Counter" border="0">
                                 </a>
                             </div>
                         </div>
@@ -114,44 +120,88 @@
             <main role="main" class="main-dashboard" id="main-dashboard">
 
                 <div class="row">
-                    <div class="col col-lg-12">
-                        <div class="card card-default ">
-                            <div class="card-header">
-
-
-                                <h2 class="card-title"><a href="https://www.c-sharpcorner.com/technologies" target="_blank">C-sharpcorner contribution Statistics</h2></a>
-                            </div>
-                            <div class="card-body text-center">
-                                <ul id="dashboard-summary">
-                                    <li>Total Technology Categories :151</li>
-
-                                </ul>
-
-
+                    <div class="col col-lg-2">
+                        <div class="card text-white bg-success mb-2" style="max-width: 18rem;">
+                            <!-- <div class="card-header">Header</div> -->
+                            <div class="card-body status text-center">
+                                <h5 class="card-title Technology">151</h5>
+                                <p class="card-text">
+                                    <strong>Total Technology Categories</strong>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col col-lg-4">
-                        <div class="card card-default ">
-                            <div class="card-header">
-                                <h2 class="card-title">Statistics</h2>
-                            </div>
-                            <div class="card-body text-center">
-
+                    <div class="col col-lg-2">
+                        <div class="card text-white bg-warning mb-2" style="max-width: 18rem;">
+                            <!-- <div class="card-header">Header</div> -->
+                            <div class="card-body status text-center">
+                                <h5 class="card-title Contribution">151</h5>
+                                <p class="card-text">
+                                    <strong>Total Contribution Count</strong>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col col-lg-4">
-                        <div class="card card-default ">
-                            <div class="card-header">
-                                <h2 class="card-title">Statistics</h2>
-                            </div>
-                            <div class="card-body text-center">
 
+                    <div class="col col-lg-2">
+                        <div class="card text-white bg-danger mb-2" style="max-width: 18rem;">
+                            <!-- <div class="card-header">Header</div> -->
+                            <div class="card-body status text-center">
+                                <h5 class="card-title Articles">151</h5>
+                                <p class="card-text">
+                                    <strong>Total Articles Count</strong>
+                                </p>
                             </div>
                         </div>
-                    </div> -->
-
+                    </div>
+                    <div class="col col-lg-6">
+                        <div class="row">
+                        <div class="col col-lg-3">
+                            <div class="card text-white bg-info mb-2" style="max-width: 18rem;">
+                                <!-- <div class="card-header">Header</div> -->
+                                <div class="card-body status text-center">
+                                    <h5 class="card-title Blogs">151</h5>
+                                    <p class="card-text">
+                                        <strong>Total Blogs Count</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-lg-3">
+                            <div class="card text-white bg-secondary mb-2" style="max-width: 18rem;">
+                                <!-- <div class="card-header">Header</div> -->
+                                <div class="card-body status text-center">
+                                    <h5 class="card-title Links">151</h5>
+                                    <p class="card-text">
+                                        <strong>Total Links Count</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-lg-3">
+                            <div class="card text-white bg-primary mb-2" style="max-width: 18rem;">
+                                <!-- <div class="card-header">Header</div> -->
+                                <div class="card-body status text-center">
+                                    <h5 class="card-title Videos">151</h5>
+                                    <p class="card-text">
+                                        <strong>Total Videos Count</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-lg-3">
+                            <div class="card text-white bg-dark mb-2" style="max-width: 18rem;">
+                                <!-- <div class="card-header">Header</div> -->
+                                <div class="card-body status text-center">
+                                    <h5 class="card-title News">151</h5>
+                                    <p class="card-text">
+                                        <strong>Total News Count</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                 </div>
 
 
@@ -159,18 +209,19 @@
                     <div class="col col-lg-4">
                         <div class="card card-default ">
                             <div class="card-header">
-                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="tuichart" data-chart-type="bar" data-target-id="c3-line-container" data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="tuichart" data-chart-type="bar" data-target-id="c3-line-container"
+                                    data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
                                     <i class="fas fa-redo"></i>
                                 </a>
 
-                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-target-id="tui-bar-container" data-toggle="tooltip">
                                     <i class="fas fa-arrows-alt"></i>
                                 </a>
                                 <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
                                     <em class="fa fa-eye"></em>
                                 </a>
 
-                                <h2 class="card-title">Technology wise statistics</h2>
+                                <h2 class="card-title">Technology wise contributed Articles counts</h2>
                             </div>
                             <div class="card-body text-center">
                                 <div id="tui-bar-container"></div>
@@ -180,18 +231,19 @@
                     <div class="col col-lg-4">
                         <div class="card card-default ">
                             <div class="card-header">
-                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="tuichart" data-chart-type="bar" data-target-id="c3-line-container" data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="tuichart" data-chart-type="bar" data-target-id="c3-line-container"
+                                    data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
                                     <i class="fas fa-redo"></i>
                                 </a>
 
-                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-target-id="tui-bar-blogs-container" data-toggle="tooltip">
                                     <i class="fas fa-arrows-alt"></i>
                                 </a>
                                 <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
                                     <em class="fa fa-eye"></em>
                                 </a>
 
-                                <h2 class="card-title">Technology wise statistics</h2>
+                                <h2 class="card-title">Technology wise contributed Blogs counts</h2>
                             </div>
                             <div class="card-body text-center">
                                 <div id="tui-bar-blogs-container"></div>
@@ -201,18 +253,19 @@
                     <div class="col col-lg-4">
                         <div class="card card-default ">
                             <div class="card-header">
-                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="tuichart" data-chart-type="bar" data-target-id="c3-line-container" data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="tuichart" data-chart-type="bar" data-target-id="c3-line-container"
+                                    data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
                                     <i class="fas fa-redo"></i>
                                 </a>
 
-                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-target-id="tui-bar-videos-container" data-toggle="tooltip">
                                     <i class="fas fa-arrows-alt"></i>
                                 </a>
                                 <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
                                     <em class="fa fa-eye"></em>
                                 </a>
 
-                                <h2 class="card-title">Technology wise statistics</h2>
+                                <h2 class="card-title">Technology wise contributed Videos counts</h2>
                             </div>
                             <div class="card-body text-center">
                                 <div id="tui-bar-videos-container"></div>
@@ -225,18 +278,19 @@
                     <div class="col col-lg-12">
                         <div class="card card-default ">
                             <div class="card-header">
-                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="tuichart" data-chart-type="bar" data-target-id="c3-line-container" data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="tuichart" data-chart-type="bar" data-target-id="c3-line-container"
+                                    data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
                                     <i class="fas fa-redo"></i>
                                 </a>
 
-                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-target-id="tui-bar-full-container" data-toggle="tooltip">
                                     <i class="fas fa-arrows-alt"></i>
                                 </a>
                                 <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
                                     <em class="fa fa-eye"></em>
                                 </a>
 
-                                <h2 class="card-title">Technology wise statistics</h2>
+                                <h2 class="card-title">Technology wise contributed All Category counts</h2>
                             </div>
                             <div class="card-body text-center">
                                 <div id="tui-bar-full-container"></div>
@@ -248,18 +302,19 @@
                     <div class="col col-lg-4">
                         <div class="card card-default ">
                             <div class="card-header">
-                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="tuichart" data-chart-type="bar" data-target-id="c3-line-container" data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="tuichart" data-chart-type="bar" data-target-id="c3-line-container"
+                                    data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
                                     <i class="fas fa-redo"></i>
                                 </a>
 
-                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-target-id="tui-pie-dotnet-container" data-toggle="tooltip">
                                     <i class="fas fa-arrows-alt"></i>
                                 </a>
                                 <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
                                     <em class="fa fa-eye"></em>
                                 </a>
 
-                                <h2 class="card-title">Technology wise statistics</h2>
+                                <h2 class="card-title">Contibution of ASP.NET Articles</h2>
                             </div>
                             <div class="card-body text-center">
                                 <div id="tui-pie-dotnet-container"></div>
@@ -269,18 +324,19 @@
                     <div class="col col-lg-4">
                         <div class="card card-default ">
                             <div class="card-header">
-                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="tuichart" data-chart-type="bar" data-target-id="c3-line-container" data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="tuichart" data-chart-type="bar" data-target-id="c3-line-container"
+                                    data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
                                     <i class="fas fa-redo"></i>
                                 </a>
 
-                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-target-id="tui-pie-sharepoint-container" data-toggle="tooltip">
                                     <i class="fas fa-arrows-alt"></i>
                                 </a>
                                 <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
                                     <em class="fa fa-eye"></em>
                                 </a>
 
-                                <h2 class="card-title">Technology wise statistics</h2>
+                                <h2 class="card-title">Contibution of SharePoint Articles</h2>
                             </div>
                             <div class="card-body text-center">
                                 <div id="tui-pie-sharepoint-container"></div>
@@ -290,18 +346,19 @@
                     <div class="col col-lg-4">
                         <div class="card card-default ">
                             <div class="card-header">
-                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="tuichart" data-chart-type="bar" data-target-id="c3-line-container" data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="tuichart" data-chart-type="bar" data-target-id="c3-line-container"
+                                    data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
                                     <i class="fas fa-redo"></i>
                                 </a>
 
-                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-target-id="tui-pie-csharp-container" data-toggle="tooltip">
                                     <i class="fas fa-arrows-alt"></i>
                                 </a>
                                 <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
                                     <em class="fa fa-eye"></em>
                                 </a>
 
-                                <h2 class="card-title">Technology wise statistics</h2>
+                                <h2 class="card-title">Contibution of C# Articles</h2>
                             </div>
                             <div class="card-body text-center">
                                 <div id="tui-pie-csharp-container"></div>
@@ -339,10 +396,13 @@
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
     <!--custom js-->
     <script src="data/getData.js"></script>
@@ -368,7 +428,7 @@
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91024451-2"></script>
     <script>
-        window.ga = window.ga || function() {
+        window.ga = window.ga || function () {
             (ga.q = ga.q || []).push(arguments)
         };
         ga.l = +new Date();

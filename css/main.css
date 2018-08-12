@@ -6911,3 +6911,12 @@ body .jvectormap-zoomout {
 #dashboard-summary {
     text-align: left;
 }
+
+.status .card-title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 45px;
+    padding-top: 20px;
+    letter-spacing: -0.8px;
+}
