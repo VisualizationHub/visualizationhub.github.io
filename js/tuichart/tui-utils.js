@@ -8,7 +8,7 @@ var tuiUtils = (function() {
         chart: {
             width: 470,
             height: 250,
-            title: 'Chart Title',
+           // title: 'Chart Title',
             format: '1,000'
         },
         yAxis: {
@@ -40,7 +40,7 @@ var tuiUtils = (function() {
 
     //set user provided chart settings
     var generateChartOptions = function(settings) {
-        _.set(chartOptions, "chart.title", settings.chartTitle);
+     //   _.set(chartOptions, "chart.title", settings.chartTitle);
         _.set(chartOptions, "yAxis.title", settings.yAxisTitle);
         _.set(chartOptions, "xAxis.title", settings.chartTitle);
         _.set(chartOptions, "chart.width", settings.width);
@@ -67,7 +67,7 @@ var tuiUtils = (function() {
                 visible: false // default is true.
             },
             chart: {
-                width: 350,
+                width: 470,
                 height: 400,
                 title: 'Contibution of Dot Net Articles'
             },
