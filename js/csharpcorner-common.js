@@ -166,7 +166,8 @@ $(function() {
 
 
 var prepareDataPassedIntoCharts = function() {
-    var promise = $.getJSON('data/csharpcorner.json');
+    //var promise = $.getJSON('data/csharpcorner.json');
+    var promise = $.getJSON('data/cSharpcornerStatistics--04-11-2018.json');
 
     promise.done(function(data) {
         console.log(data);
