@@ -169,11 +169,17 @@ main{
 }
 
 @media (max-width: 600px){
+    .content-wrapper {
+        margin-top: 0;
+    }
     .content-wrapper .content-heading {
         display: inline-grid;
     }
     .content-wrapper .content-heading .contact-us{
         width: 100%;
+    }
+    main{
+        padding-top: 0;
     }
     .sticky {
         position: relative;
