@@ -11,7 +11,14 @@ html {
     height: 100%;
     font-family: Source Sans Pro, sans-serif;
 }
-
+main{
+    padding-top: 70px;
+}
+.sticky {
+    position: fixed;
+    z-index: 1;    
+    width: 100%
+  }
 .wrapper {
     position: relative;
     width: 100%;
@@ -86,6 +93,7 @@ html {
 .content-wrapper {
     padding: 15px;
     width: 100%;
+    margin-top: 55px;
     border-top: 1px solid rgba(0, 0, 0, .15);
     /* margin-top: -1px */
 }
@@ -129,6 +137,9 @@ html {
     background-color: #fafbfc;
     border-bottom: 1px solid #cfdbe2
 }
+.content-wrapper .content-heading .contact-us{
+    width: 30%;
+}
 
 .content-wrapper .content-heading small {
     display: block;
@@ -149,11 +160,20 @@ html {
     .content-wrapper .content-heading {
         margin: -20px;
         margin-bottom: 20px;
-        padding: 20px
+        padding: 20px;
     }
     .content-wrapper .content-heading .btn,
     .content-wrapper .content-heading button {
         margin: 0
+    }
+}
+
+@media (max-width: 600px){
+    .content-wrapper .content-heading {
+        display: inline-grid;
+    }
+    .content-wrapper .content-heading .contact-us{
+        width: 100%;
     }
 }
 
