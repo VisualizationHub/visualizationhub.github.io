@@ -181,9 +181,12 @@ main{
     main{
         padding-top: 0;
     }
+    .navbar-toggler{
+        z-index: 1;
+    }
     .sticky {
         position: relative;
-        z-index: -1;    
+        z-index: 0;    
         width: 100%
       }
 }
