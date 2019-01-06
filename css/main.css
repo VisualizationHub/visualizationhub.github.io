@@ -175,6 +175,11 @@ main{
     .content-wrapper .content-heading .contact-us{
         width: 100%;
     }
+    .sticky {
+        position: relative;
+        z-index: -1;    
+        width: 100%
+      }
 }
 
 @media (min-width:768px) {
