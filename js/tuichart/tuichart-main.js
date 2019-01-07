@@ -24,8 +24,8 @@ var getBarTuiChart = function(element) {
         "chartTitle": "Technology wise contributed " + element.chartsFor + " counts",
         "xAxisTitle": element.chartsFor + " count",
         "yAxisTitle": "Technologies",
-        "width": element.Id === "zoombody" ? 900 : 470,
-        "height": element.Id === "zoombody" ? 550 : 470
+        "width": element.Id === "zoombody" ? 700 : 470,
+        "height": element.Id === "zoombody" ? 470 : 470
     };
     var chartData = {
         selector: element.Id,
@@ -141,8 +141,8 @@ var getPieTuiChart = function(element) {
         "chartTitle": 'Contibution of ' + element.chartsFor + " Articles",
         "xAxisTitle": element.chartsFor + " count",
         "yAxisTitle": "Technologies",
-        "width": element.Id === "zoombody" ? 900 : 470,
-        "height": element.Id === "zoombody" ? 550 : 300
+        "width": element.Id === "zoombody" ? 600 : 470,
+        "height": element.Id === "zoombody" ? 450 : 300
     };
     var chartData = {
         selector: element.Id,
