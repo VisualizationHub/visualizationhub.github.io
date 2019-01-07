@@ -39,10 +39,9 @@
 
 </head>
 
-
-
 <body id="app-container">
     <div></div>
+    <!-- Zoom View-->
     <div class="modal fade" id="zoomPopup" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -58,6 +57,7 @@
             </div>
         </div>
     </div>
+    <!-- App Template, Main App, Entry Point for Handlebar -->
     <script id="app" type="text/x-handlebars-template">
 
         <div class="wrapper dashboardWrap">
@@ -67,6 +67,8 @@
             </div>
         </div>
     </script>
+
+    <!-- Main Container Template Which contains all charts and tiles template-->
     <script id="main-container" type="text/x-handlebars-template">
 
         <div class="content-heading">
@@ -123,6 +125,8 @@
             </div>
         </main>
     </script>
+
+    <!-- Reusable Bar Charts Template -->
     <script type="text/x-handlebars-template" id="chart-element">
         <div class="col col-lg-{{grid-no}}">
             <div class="card card-default ">
@@ -146,6 +150,8 @@
             </div>
         </div>
     </script>
+
+    <!-- TileCard or CountCard Template -->
     <script type="text/x-handlebars-template" id="tile-card">
         <div class="col col-lg-{{grid-no}}">
             <div class="card text-white {{bg}} mb-2" style="max-width: 18rem;">
@@ -158,6 +164,8 @@
             </div>
         </div>
     </script>
+
+    <!-- Reusable Header Template -->
     <script type="text/x-handlebars-template" id="header">
         <header class="topnavbar-wrapper">
             <nav class="navbar navbar-expand-lg navbar-light bg-light box-shadow">
@@ -184,17 +192,6 @@
                                 <span class="sr-only"></span>
                             </a>
                         </li>
-                        <!-- <li class="nav-item active">
-                            <a class="nav-link" href="#">Pie Chart
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Stack Charts
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li> -->
-
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -222,21 +219,20 @@
 
     <!--Custom Utility Methods for Data transfer object-->
     <script src="js/DTO.js"></script>
-    <!--TuiChart.js-->
+    <!--Tui based Chart.js  its utility methods -->
     <script src="js/tuichart/tui-utils.js"></script>
     <script src="js/tuichart/tuichart-main.js"></script>
 
     <script src="js/csharpcorner-common.js"></script>
     <script>
         $(function() {
+            //Register each Component or separate template in HandleBar
             Handlebars.registerPartial("header", $("#header").html());
             Handlebars.registerPartial("tile-card", $("#tile-card").html());
             Handlebars.registerPartial("chart-element", $("#chart-element").html());
             Handlebars.registerPartial("main-container", $("#main-container").html());
 
-
-
-            //Get the HTML from the template   in the script tag
+            //Get the handlebar HTML from the template in the script tag from root template
             var theTemplateScript = $("#app").html();
             var tiles = [{
                 name: "Technology",
@@ -263,8 +259,9 @@
                 "count": 151,
                 "title": "Total Videos Count"
             }];
-            //Compile the template
+            //Compile the App template
             var theTemplate = Handlebars.compile(theTemplateScript);
+            //Append/replace Compiled Handlebar template to app-container
             $("#app-container").append(theTemplate());
 
         });

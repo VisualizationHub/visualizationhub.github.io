@@ -8,7 +8,7 @@ var tuiUtils = (function() {
         chart: {
             width: 470,
             height: 250,
-           // title: 'Chart Title',
+            // title: 'Chart Title',
             format: '1,000'
         },
         yAxis: {
@@ -40,9 +40,10 @@ var tuiUtils = (function() {
 
     //set user provided chart settings
     var generateChartOptions = function(settings) {
-     //   _.set(chartOptions, "chart.title", settings.chartTitle);
+        //   _.set(chartOptions, "chart.title", settings.chartTitle);
+        //Update Nested Property in json object using Lodash
         _.set(chartOptions, "yAxis.title", settings.yAxisTitle);
-        _.set(chartOptions, "xAxis.title", settings.chartTitle);
+        _.set(chartOptions, "xAxis.title", settings.xAxisTitle);
         _.set(chartOptions, "chart.width", settings.width);
         _.set(chartOptions, "chart.height", settings.height);
         _.set(chartOptions, "xAxis.title", settings.chartTitle);
@@ -86,6 +87,7 @@ var tuiUtils = (function() {
 
             }
         };
+        //Update Nested Property in json object using Lodash
         _.set(options, "chart.title", chartData.options.chartTitle);
         // chartData.selector -> it may be class, id or any selector but in most case it will be ID
         // chartData.data may be raw data or processed data for charts

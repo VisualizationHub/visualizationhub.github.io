@@ -1,21 +1,10 @@
 var getBarTuiChart = function(element) {
     //console.log(element.Data);
     var categoryData = ["Articles", "Blogs", "Links", "Videos", "News"];
-    // Old Code which filter using underscore js
-    // var topData = _.chain(element.Data)
-    //     .sortBy(function(item) { var ele = _.find(item.categoryData, (e) => { return e.categoryType === "Articles" ? e.count : 0; }); return parseInt(ele.count) * -1; })
-    //     .first(10)
-    //     .value();
-
-    //// New code which filter using lodash js
-    // First custom sort by integer count by converting it to float then reverse result
-    //    var topData = _.chain(element.Data).sortBy(function(item) { return parseFloat(item.categoryData[0].count); }).reverse().take(10).value();
-    // Much better optimized result for descending order by multiply by -1  
-    //var topData = _.chain(element.Data).sortBy(function(item) { return -1 * parseFloat(item.categoryData[0].count); }).take(10).value();
     var topData = _.chain(element.Data).sortBy(function(item) {
         return -1 * parseFloat(item.categoryData[categoryData.indexOf(element.chartsFor)].count);
     }).take(10).value();
-    //  console.log(topData);
+
     // Generate series data based on technology
     var data = {
         // categories: _.pluck(topData,'category'),
@@ -35,8 +24,8 @@ var getBarTuiChart = function(element) {
         "chartTitle": "Technology wise contributed " + element.chartsFor + " counts",
         "xAxisTitle": element.chartsFor + " count",
         "yAxisTitle": "Technologies",
-        "width": 470,
-        "height": 400
+        "width": element.Id === "zoombody" ? 900 : 470,
+        "height": element.Id === "zoombody" ? 550 : 470
     };
     var chartData = {
         selector: element.Id,
@@ -152,8 +141,8 @@ var getPieTuiChart = function(element) {
         "chartTitle": 'Contibution of ' + element.chartsFor + " Articles",
         "xAxisTitle": element.chartsFor + " count",
         "yAxisTitle": "Technologies",
-        "width": 470,
-        "height": 300
+        "width": element.Id === "zoombody" ? 900 : 470,
+        "height": element.Id === "zoombody" ? 550 : 300
     };
     var chartData = {
         selector: element.Id,
