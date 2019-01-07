@@ -52,9 +52,9 @@ var initCharts = function () {
     });
 
     //tuichart.js
-    getBarTuiChart({
-        Id: "tui-bar-container"
-    });
+    // getBarTuiChart({
+    //     Id: "tui-bar-container"
+    // });
 
 };
 

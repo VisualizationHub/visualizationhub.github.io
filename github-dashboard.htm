@@ -69,11 +69,27 @@
     </script>
     <script id="main-container" type="text/x-handlebars-template">
 
-        <div class="content-heading">
+        <div class="content-heading sticky">
             <div>
                 <h4 id="dashboard-title">
                     <a href="https://github.com/" target="_blank">Github Dashboard - Unofficial</a>
                 </h4>
+            </div>
+            <div>&nbsp; &nbsp;</div>
+            <div  class="contact-us" >
+               <marquee scrolldelay="50"><b>Email us:</b> arvindmepani@gmail.com, jay.agrawal2011@live.com</marquee>
+            </div>
+            <div>&nbsp; &nbsp;</div>
+            <div>
+                    <a href="http://www.c-sharpcorner.com/members/ano-mepani">
+                        <img src="http://www.c-sharpcorner.com/members/ano-mepani/flair.png" width="220" height="58" alt="profile for Ano C# Corner - A Social Community of Developers and Programmers" title="profile for Ano at C# Corner - A Social Community of Developers and Programmers" />
+                    </a>
+            </div>
+            <div>&nbsp; &nbsp;</div>
+            <div>
+                    <a href="https://www.c-sharpcorner.com/members/jayesh-agrawal3">
+                        <img src="https://www.c-sharpcorner.com/members/jayesh-agrawal3/flair.png" width="220" height="58" alt="profile for Jayesh  C# Corner - A Social Community of Developers and Programmers" title="profile for Jayesh  at C# Corner - A Social Community of Developers and Programmers" />
+                    </a>
             </div>
             <div class="ml-auto">
                 
@@ -152,9 +168,9 @@
         </div>
     </script>
     <script type="text/x-handlebars-template" id="header">
-        <header class="topnavbar-wrapper">
+        <header class="topnavbar-wrapper sticky">
             <nav class="navbar navbar-expand-lg navbar-light bg-light box-shadow">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" onclick="$('#navbarTogglerDemo01').toggleClass('collapse')" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
