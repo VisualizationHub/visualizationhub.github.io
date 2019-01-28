@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tui Charts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/tui-chart.min.css">
+    <script src="js/jquery-3.3.1.min.js" type='text/javascript'></script>
+
+    <script type='text/javascript' src='js/tuicode-snippet.min.js'></script>
+    <script type='text/javascript' src='js/raphael.min.js'></script>
+    <script src="js/tui-chart.min.js"></script>
+    <script src="js/lodash.min.js"></script>
+
+    <script>
+        var topArticleData = [{
+            "category": "ASP.NET",
+            "url": "https://www.c-sharpcorner.com/technologies/asp-dot-net-programming",
+            "categoryData": [{
+                "categoryType": "Articles",
+                "count": "4256"
+            }, {
+                "categoryType": "Blogs",
+                "count": "1380"
+            }, {
+                "categoryType": "Links",
+                "count": "111"
+            }, {
+                "categoryType": "Videos",
+                "count": "77"
+            }, {
+                "categoryType": "News",
+                "count": "18"
+            }]
+        }, {
+            "category": "SharePoint",
+            "url": "https://www.c-sharpcorner.com/technologies/sharepoint",
+            "categoryData": [{
+                "categoryType": "Articles",
+                "count": "3944"
+            }, {
+                "categoryType": "Blogs",
+                "count": "2318"
+            }, {
+                "categoryType": "Links",
+                "count": "54"
+            }, {
+                "categoryType": "Videos",
+                "count": "37"
+            }, {
+                "categoryType": "News",
+                "count": "22"
+            }]
+        }, {
+            "category": "C#",
+            "url": "https://www.c-sharpcorner.com/technologies/csharp-programming",
+            "categoryData": [{
+                "categoryType": "Articles",
+                "count": "2567"
+            }, {
+                "categoryType": "Blogs",
+                "count": "1684"
+            }, {
+                "categoryType": "Links",
+                "count": "71"
+            }, {
+                "categoryType": "Videos",
+                "count": "98"
+            }, {
+                "categoryType": "News",
+                "count": "14"
+            }]
+        }, {
+            "category": "Azure",
+            "url": "https://www.c-sharpcorner.com/technologies/azure",
+            "categoryData": [{
+                "categoryType": "Articles",
+                "count": "1491"
+            }, {
+                "categoryType": "Blogs",
+                "count": "174"
+            }, {
+                "categoryType": "Links",
+                "count": "62"
+            }, {
+                "categoryType": "Videos",
+                "count": "90"
+            }, {
+                "categoryType": "News",
+                "count": "141"
+            }]
+        }, {
+            "category": "SQL Server",
+            "url": "https://www.c-sharpcorner.com/technologies/sql-server",
+            "categoryData": [{
+                "categoryType": "Articles",
+                "count": "1205"
+            }, {
+                "categoryType": "Blogs",
+                "count": "1175"
+            }, {
+                "categoryType": "Links",
+                "count": "62"
+            }, {
+                "categoryType": "Videos",
+                "count": "25"
+            }, {
+                "categoryType": "News",
+                "count": "25"
+            }]
+        }, {
+            "category": "Angular",
+            "url": "https://www.c-sharpcorner.com/technologies/angularjs",
+            "categoryData": [{
+                "categoryType": "Articles",
+                "count": "1000"
+            }, {
+                "categoryType": "Blogs",
+                "count": "269"
+            }, {
+                "categoryType": "Links",
+                "count": "14"
+            }, {
+                "categoryType": "Videos",
+                "count": "41"
+            }, {
+                "categoryType": "News",
+                "count": "14"
+            }]
+        }, {
+            "category": "Windows 10",
+            "url": "https://www.c-sharpcorner.com/technologies/windows_10",
+            "categoryData": [{
+                "categoryType": "Articles",
+                "count": "915"
+            }, {
+                "categoryType": "Blogs",
+                "count": "114"
+            }, {
+                "categoryType": "Links",
+                "count": "46"
+            }, {
+                "categoryType": "Videos",
+                "count": "24"
+            }, {
+                "categoryType": "News",
+                "count": "312"
+            }]
+        }, {
+            "category": "UWP",
+            "url": "https://www.c-sharpcorner.com/technologies/universal-windows-apps",
+            "categoryData": [{
+                "categoryType": "Articles",
+                "count": "887"
+            }, {
+                "categoryType": "Blogs",
+                "count": "86"
+            }, {
+                "categoryType": "Links",
+                "count": "28"
+            }, {
+                "categoryType": "Videos",
+                "count": "9"
+            }, {
+                "categoryType": "News",
+                "count": "18"
+            }]
+        }, {
+            "category": ".NET",
+            "url": "https://www.c-sharpcorner.com/technologies/dot_net_2015",
+            "categoryData": [{
+                "categoryType": "Articles",
+                "count": "818"
+            }, {
+                "categoryType": "Blogs",
+                "count": "710"
+            }, {
+                "categoryType": "Links",
+                "count": "332"
+            }, {
+                "categoryType": "Videos",
+                "count": "91"
+            }, {
+                "categoryType": "News",
+                "count": "93"
+            }]
+        }, {
+            "category": "Visual Studio",
+            "url": "https://www.c-sharpcorner.com/technologies/visual-studio",
+            "categoryData": [{
+                "categoryType": "Articles",
+                "count": "737"
+            }, {
+                "categoryType": "Blogs",
+                "count": "231"
+            }, {
+                "categoryType": "Links",
+                "count": "51"
+            }, {
+                "categoryType": "Videos",
+                "count": "73"
+            }, {
+                "categoryType": "News",
+                "count": "115"
+            }]
+        }];
+    </script>
+    <script>
+        //drawBarChartUsingTUILibrary({ id, chartTitle,datacategory,isColumnChart})
+        //Reusable utility function to draw tui bar or column charts
+        function drawBarChartUsingTUILibrary(options) {
+            // Common chartOption for Tui Charts 
+            var chartOptions = {
+                chartExportMenu: {
+                    visible: false // default is true.
+                },
+                chart: {
+                    width: 470,
+                    height: 250,
+                    title: 'C-SharpCorner Articles Technology Category',
+                    format: '1,000'
+                },
+                yAxis: {
+                    title: 'Y Axis'
+                },
+                xAxis: {
+                    title: 'X Axis',
+                    min: 0,
+                    //max: 9000,
+                    // suffix: '$'
+                },
+                series: {
+                    showLabel: true
+                }
+            };
+
+            //Sub Category
+            var categoryData = ["Articles", "Blogs", "Links", "Videos", "News"];
+
+            // Generate series data based on sub Category
+            var data = {
+                // categories: _.pluck(topData,'category'),
+                categories: [options.category],
+                series: _.map(options.data, function(e) {
+                    //Calculate Article count in each category
+                    var ele = _.find(e.categoryData, function(e) {
+                        return e.categoryType === options.category ? e.count : 0;
+                    });
+                    return {
+                        name: e.category,
+                        data: parseInt(ele.count)
+                    };
+                })
+            };
+
+            //Update Json nested proprties using Lodash
+            _.set(chartOptions, "chart.title", options.chartTitle);
+            if (options.isColumnChart) {
+                //Draw tui Columns Charts
+
+                tui.chart.columnChart(document.getElementById(options.id), data, chartOptions);
+            } else {
+                //Draw tui Bar Charts
+                tui.chart.barChart(document.getElementById(options.id), data, chartOptions);
+            }
+        }
+
+        $(document).ready(function() {
+            console.log("Dom is ready, Now call function to draw charts");
+
+            drawBarChartUsingTUILibrary({
+                id: "tui-chart1",
+                chartTitle: 'C-SharpCorner Top 10 Contribution by Articles Count',
+                data: topArticleData,
+                category: "Articles"
+            });
+            drawBarChartUsingTUILibrary({
+                id: "tui-chart2",
+                chartTitle: 'C-SharpCorner Top 10 Contribution by Blogs Count',
+                data: topArticleData,
+                category: "Blogs"
+            });
+            drawBarChartUsingTUILibrary({
+                id: "tui-chart3",
+                chartTitle: 'C-SharpCorner Top 10 Contribution by News Count',
+                data: topArticleData,
+                category: "News",
+                isColumnChart: true
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <h3>Sample TUI Bar charts based on c-sharpcorner web scrapping data.</h3>
+
+    <div id="tui-chart1"></div>
+    <br />
+    <div id="tui-chart2"></div>
+    <br />
+    <div id="tui-chart3"></div>
+    <br />
+
+</body>
+
+</html>

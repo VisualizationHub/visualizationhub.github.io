@@ -43,7 +43,7 @@ var tuiUtils = (function() {
         //   _.set(chartOptions, "chart.title", settings.chartTitle);
         //Update Nested Property in json object using Lodash
         _.set(chartOptions, "yAxis.title", settings.yAxisTitle);
-        _.set(chartOptions, "xAxis.title", settings.xAxisTitle);
+        _.set(chartOptions, "xAxis.title", settings.chartTitle);
         _.set(chartOptions, "chart.width", settings.width);
         _.set(chartOptions, "chart.height", settings.height);
         _.set(chartOptions, "xAxis.title", settings.chartTitle);

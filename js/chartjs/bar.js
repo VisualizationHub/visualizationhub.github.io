@@ -1,8 +1,7 @@
-var getBarChartJs = function (element) {
+var getBarChartJs = function(element) {
     var data = {
-        labels: ["Africa", "America", "Asia", "Europe"],
-        datasets: [
-            {
+        labels: ["Africa"],
+        datasets: [{
                 label: "Year 1800",
                 data: [107, 31, 635, 203],
             },
@@ -43,7 +42,7 @@ var getBarChartJs = function (element) {
     //console.log(ctx);
 
     new Chart(ctx, {
-        type: element.isRotate === undefined ? "bar" : element.isRotate,//'bar',//'horizontalBar', for rotate charts
+        type: element.isRotate === undefined ? "bar" : element.isRotate, //'bar',//'horizontalBar', for rotate charts
         data: data,
         options: options
     });
