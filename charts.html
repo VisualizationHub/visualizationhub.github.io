@@ -4,12 +4,14 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Tui Charts</title>
+    <title>Charts js Graph Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/tui-chart.min.css">
     <script src="js/jquery-3.3.1.min.js" type='text/javascript'></script>
 
-    <script type='text/javascript' src='js/tuicode-snippet.min.js'></script>
+    <!--Chart.js-->
+    <script src="js/Chart.min.js"></script>
+    <script type='text/javascript' src='js/tui-code-snippet.min.js'></script>
     <script type='text/javascript' src='js/raphael.min.js'></script>
     <script src="js/tui-chart.min.js"></script>
     <script src="js/lodash.min.js"></script>
@@ -208,9 +210,8 @@
         }];
     </script>
     <script>
-        //drawBarChartUsingTUILibrary({ id, chartTitle,datacategory,isColumnChart})
-        //Reusable utility function to draw tui bar or column charts
-        function drawBarChartUsingTUILibrary(options) {
+        $(document).ready(function() {
+            console.log("Dom is ready");
             // Common chartOption for Tui Charts 
             var chartOptions = {
                 chartExportMenu: {
@@ -242,11 +243,11 @@
             // Generate series data based on sub Category
             var data = {
                 // categories: _.pluck(topData,'category'),
-                categories: [options.category],
-                series: _.map(options.data, function(e) {
+                categories: ["Articles"],
+                series: _.map(topArticleData, function(e) {
                     //Calculate Article count in each category
                     var ele = _.find(e.categoryData, function(e) {
-                        return e.categoryType === options.category ? e.count : 0;
+                        return e.categoryType === "Articles" ? e.count : 0;
                     });
                     return {
                         name: e.category,
@@ -256,53 +257,117 @@
             };
 
             //Update Json nested proprties using Lodash
-            _.set(chartOptions, "chart.title", options.chartTitle);
-            if (options.isColumnChart) {
-                //Draw tui Columns Charts
+            _.set(chartOptions, "chart.title", 'C-SharpCorner Top 10 Contribution by Articles Count');
 
-                tui.chart.columnChart(document.getElementById(options.id), data, chartOptions);
-            } else {
-                //Draw tui Bar Charts
-                tui.chart.barChart(document.getElementById(options.id), data, chartOptions);
-            }
-        }
+            //Draw tui Bar Charts
+            tui.chart.barChart(document.getElementById("tui-chart1"), data, chartOptions);
 
-        $(document).ready(function() {
-            console.log("Dom is ready, Now call function to draw charts");
+            var data = {
+                // categories: _.pluck(topData,'category'),
+                categories: ["Blogs"],
+                series: _.map(topArticleData, function(e) {
+                    var ele = _.find(e.categoryData, function(e) {
+                        return e.categoryType === "Blogs" ? e.count : 0;
+                    });
+                    return {
+                        name: e.category,
+                        data: parseInt(ele.count)
+                    };
+                })
+            };
+            _.set(chartOptions, "chart.title", 'C-SharpCorner Top 10 Contribution by Blogs Count');
 
-            drawBarChartUsingTUILibrary({
-                id: "tui-chart1",
-                chartTitle: 'C-SharpCorner Top 10 Contribution by Articles Count',
-                data: topArticleData,
-                category: "Articles"
+            tui.chart.barChart(document.getElementById("tui-chart2"), data, chartOptions);
+            var seriesData = _.map(topArticleData, function(e) {
+                var ele = _.find(e.categoryData, function(e) {
+                    return e.categoryType === "News" ? e.count : 0;
+                });
+                return {
+                    name: e.category,
+                    data: parseInt(ele.count)
+                };
             });
-            drawBarChartUsingTUILibrary({
-                id: "tui-chart2",
-                chartTitle: 'C-SharpCorner Top 10 Contribution by Blogs Count',
-                data: topArticleData,
-                category: "Blogs"
+            console.log(seriesData);
+            var data = {
+                // categories: _.pluck(topData,'category'),
+                categories: ["News"],
+                series: seriesData
+            };
+            _.set(chartOptions, "chart.title", 'C-SharpCorner Top 10 Contribution by News Count');
+            tui.chart.columnChart(document.getElementById("tui-chart3"), data, chartOptions);
+
+
+            seriesData = _.map(topArticleData, function(e) {
+                var ele = _.find(e.categoryData, function(e) {
+                    return e.categoryType === "News" ? e.count : 0;
+                });
+                return {
+                    label: e.category,
+                    data: [parseInt(ele.count)]
+                };
             });
-            drawBarChartUsingTUILibrary({
-                id: "tui-chart3",
-                chartTitle: 'C-SharpCorner Top 10 Contribution by News Count',
-                data: topArticleData,
-                category: "News",
-                isColumnChart: true
-            });
+            console.log(seriesData);
+            getBarChartJs({
+                Id: "chart1",
+                data: seriesData
+            })
         });
+        var getBarChartJs = function(element) {
+            var data = {
+                labels: ['Articles'],
+                datasets: element.data
+            }
+
+            var options = {
+                scales: {
+                    yAxes: [{
+                        //	stacked:true,
+                        gridLines: {
+                            display: true,
+                            color: "rgba(255,99,132,0.2)"
+                        }
+                    }],
+                    xAxes: [{
+                        stacked: false,
+                        gridLines: {
+                            display: false
+                        }
+                    }]
+                }
+            };
+
+
+            var ctx = document.getElementById(element.Id);
+            //console.log(ctx);
+
+            new Chart(ctx, {
+                type: element.isRotate === undefined ? "bar" : element.isRotate, //'bar',//'horizontalBar', for rotate charts
+                data: data,
+                options: options
+            });
+        }
     </script>
 
 </head>
 
 <body>
-    <h3>Sample TUI Bar charts based on c-sharpcorner web scrapping data.</h3>
+    <h3>Sample TUI Bar charts </h3>
 
+    <p>
+
+    </p>
+    <!-- Canvas or chart.js chart must be wrapped with its parent containing width or height-->
+    <div style="width:500px;height:350px;">
+        <canvas id="chart1" height="200px"></canvas>
+    </div>
+    <!-- TUI CHARTS DEMO -->
+    <br/>
     <div id="tui-chart1"></div>
-    <br />
+    <br/>
     <div id="tui-chart2"></div>
-    <br />
+    <br/>
     <div id="tui-chart3"></div>
-    <br />
+    <br/>
 
 </body>
 
