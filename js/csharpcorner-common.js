@@ -169,7 +169,9 @@ var prepareDataPassedIntoCharts = function() {
     //Sample format data/cSharpcornerStatistics--dd-mm-yyyy 
     //var promise = $.getJSON('data/csharpcorner.json');
     //var promise = $.getJSON('data/cSharpcornerStatistics--04-11-2018.json');
-    var promise = $.getJSON('data/cSharpcornerStatistics--3-1-2019.json');
+   // var promise = $.getJSON('data/cSharpcornerStatistics--3-1-2019.json');
+    var promise = $.getJSON('data/cSharpcornerStatistics--8-1-2020.json');
+    
 
 
     promise.done(function(data) {
